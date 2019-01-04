@@ -10,6 +10,9 @@ import UIKit
 
 class TextResponseViewController: UIViewController {
     
+    var question: TextResponseQuestion?
+    var nextQuestionIndex: Int?
+    
     // Links to UI elements
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var relatedImage: UIImageView!
@@ -17,6 +20,8 @@ class TextResponseViewController: UIViewController {
     
     
     @IBAction func textResponseInputEntered(_ sender: Any) {
+        
+        // Check to see if the input has been left empty, if so display an error message.
         if (textResponseInput.text?.isEmpty)! {
             let alertController = UIAlertController(title: "Error", message:
                 "The text input cannot be left blank.", preferredStyle: UIAlertControllerStyle.alert)

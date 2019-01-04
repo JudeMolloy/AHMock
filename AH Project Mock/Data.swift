@@ -7,5 +7,25 @@
 //
 
 import Foundation
+import UIKit
+
+struct MultipleChoiceQuestion {
+    var questionText: String
+    var choiceA: String
+    var choiceB: String
+    var choiceC: String
+    var choiceD: String
+    var correctChoice: String
+    var answerExplanation: String
+    var relatedImage: UIImage?
+}
+
+struct TextResponseQuestion {
+    var questionText: String
+    var correctAnswer: String
+    var answerExplanation: String
+    var relatedImage: UIImage?
+}
+
 
 

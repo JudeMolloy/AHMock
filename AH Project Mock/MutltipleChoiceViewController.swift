@@ -8,7 +8,11 @@
 
 import UIKit
 
-class MutltipleChoiceViewController: UIViewController {
+class MultipleChoiceViewController: UIViewController {
+    
+    // Create the variable to store the data passed from previous view controller
+    var question: MultipleChoiceQuestion?
+    var nextQuestionIndex: Int?
     
     // Links to the UI features of on screen elements
     @IBOutlet weak var questionText: UILabel!
@@ -24,20 +28,29 @@ class MutltipleChoiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Sets all of the on screen elements to the data that was passed to this view controller
+        questionText.text = question?.questionText
+        choiceAbutton.setTitle(question?.choiceA, for: .normal)
+        choiceBbutton.setTitle(question?.choiceB, for: .normal)
+        choiceCbutton.setTitle(question?.choiceC, for: .normal)
+        choiceDbutton.setTitle(question?.choiceD, for: .normal)
+        
+        print(question!)
         // Do any additional setup after loading the view.
     }
     
     
     
     @IBAction func choiceAbuttonPressed(_ sender: Any) {
-        
-        let alertController = UIAlertController(title: "Correct!", message:
-            "A is the correct answer!", preferredStyle: UIAlertControllerStyle.alert)
-        
-        alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
+        if question?.correctChoice! == "A" {
+            let alertController = UIAlertController(title: "Correct!", message:
+                "A is the correct answer!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     @IBAction func choiceBbuttonPressed(_ sender: Any) {
