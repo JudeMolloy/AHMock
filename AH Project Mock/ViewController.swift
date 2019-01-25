@@ -31,11 +31,29 @@ class ViewController: UIViewController {
         // Appends the new MC question to the recursion question array
         recursionArray.append(temp1)
         
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "What problem can occur if a recursive function does not have a base case?", choiceA: "Syntax error", choiceB: "Logic error", choiceC: "Stack overflow", choiceD: "Buffer overflow", correctChoice: "C", answerExplanation: "Everytime a the function is called recursively it gets added to the stack, so in the absense of a base case a stack overflow can occur.", relatedImage: nil)
+        
+        // Appends the new MC question to the recursion question array
+        recursionArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Recusion needs a _______ to allow it to stop and not run forever.", choiceA: "Base case", choiceB: "Stopping function", choiceC: "End case", choiceD: "Loop", correctChoice: "A", answerExplanation: "A recursive funtion requires a base case to stop it from going on forever and causing an execution error.", relatedImage: nil)
+        
+        // Appends the new MC question to the recursion question array
+        recursionArray.append(temp1)
+        
         // Used as temporary file for creating the TR questions to go in the arrays
         var temp2 = TextResponseQuestion(questionText: "Which line in the code below is the base case for the recursive function? (Please enter the number of the line only.)", correctAnswer: "2", answerExplanation: "Line number 2 is the base case line as it is the condition that stops the", relatedImage: UIImage(named: "Fibonacci Code"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Recusion needs a _______ to allow it to stop and not run forever.", choiceA: "Base case", choiceB: "Stopping function", choiceC: "End case", choiceD: "Loop", correctChoice: "A", answerExplanation: "A recursive funtion requires a base case to stop it from going on forever and causing an execution error.", relatedImage: nil)
+        
+        // Appends the new MC question to the recursion question array
+        recursionArray.append(temp1)
         
 
         

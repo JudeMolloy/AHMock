@@ -12,11 +12,11 @@ class RecursionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         // Do any additional setup after loading the view.
     }
 
-    var recursionArray: Array<Any>?
+    var recursionArray = [Any]()
     
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var fibonacciInput: UITextField!
@@ -78,17 +78,54 @@ class RecursionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-        // Create a variable that you want to send
-        let question = recursionArray![0]
-        
-        if question is MultipleChoiceQuestion {
-            let destinationVC = segue.destination as! MultipleChoiceViewController
-            destinationVC.question = question as! MultipleChoiceQuestion
+        func getRandomQuestions(array: [Any]) -> [Any] {
+            var questionArray = [Any]()
+            var questionsFrom = array
+            
+            for _ in 1 ... 5 {
+                let index = Int.random(in: 0 ... (questionsFrom.count - 1))
+                print(index)
+                questionArray.append(questionsFrom[index])
+                questionsFrom.remove(at: index)
+            }
+            return questionArray
         }
-        else if question is TextResponseQuestion {
+        
+        var questionArray = getRandomQuestions(array: recursionArray)
+        
+        print("HFHGHGHHGHGHG")
+        print(questionArray)
+        print(questionArray.count)
+        
+        
+        let question = questionArray[0]
+        
+        print("SEGUE")
+        print(segue.identifier)
+        
+        
+        if question is TextResponseQuestion {
+            
+            print("is TR QN")
+            
+            
+            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! TextResponseViewController
             destinationVC.question = question as! TextResponseQuestion
+            destinationVC.questionArray = questionArray
+            destinationVC.nextQuestionIndex = 1
+
+        }
+        else if question is MultipleChoiceQuestion {
+            
+            print("is MC QN")
+            
+            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
+            let destinationVC = segue.destination as! MultipleChoiceViewController
+            destinationVC.question = question as! MultipleChoiceQuestion
+            destinationVC.questionArray = questionArray
+            destinationVC.nextQuestionIndex = 1
+            
         }
         
         
@@ -97,14 +134,23 @@ class RecursionViewController: UIViewController {
     
     @IBAction func startTestButtonPressed(_ sender: Any) {
         
-        let question = recursionArray![0]
+        // Creates a constant to store the first question in questions array.
+        let question = recursionArray[0]
         
+        
+        // Checks to see the type of the first question and then segues to the appropriate view controller.
         if question is MultipleChoiceQuestion {
+            
+            print("About to perform TR segue")
+            // Performs the segue
             performSegue(withIdentifier: "RecursionToMultipleChoice", sender: nil)
         
         }
         else if question is TextResponseQuestion {
-          
+            
+            print("About to perform TR segue")
+            // Peforms the segue
+            performSegue(withIdentifier: "RecursionToTextResponse", sender: nil)
             
         }
         

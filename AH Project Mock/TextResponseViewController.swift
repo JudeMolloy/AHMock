@@ -11,6 +11,7 @@ import UIKit
 class TextResponseViewController: UIViewController {
     
     var question: TextResponseQuestion?
+    var questionArray = [Any]()
     var nextQuestionIndex: Int?
     
     // Links to UI elements
@@ -42,6 +43,12 @@ class TextResponseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        questionText.text = question?.questionText
+        
+        if question?.relatedImage != nil {
+            relatedImage.image = question?.relatedImage
+        }
 
         // Do any additional setup after loading the view.
     }
