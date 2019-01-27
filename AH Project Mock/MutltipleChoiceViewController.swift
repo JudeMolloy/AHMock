@@ -15,6 +15,7 @@ class MultipleChoiceViewController: UIViewController {
     var nextQuestionIndex: Int?
     
     var question: MultipleChoiceQuestion?
+    var score: Int?
     
     
     // Links to the UI features of on screen elements
@@ -80,6 +81,9 @@ class MultipleChoiceViewController: UIViewController {
         // Checks if this choice is the correct answer
         if question?.correctChoice == selected {
             
+            // Increments the score variable by one
+            score = score! + 1
+            
             // Creates an alert message to display to the user.
             let alertController = UIAlertController(title: "Correct!", message:
                 "Well Done! That is the correct answer.", preferredStyle: UIAlertControllerStyle.alert)
@@ -101,58 +105,90 @@ class MultipleChoiceViewController: UIViewController {
     
     func nextQuestion() {
         // Checks to see the type of the next question and then segues to the appropriate view controller.
-        
-        
-        print("The index is")
-        print(nextQuestionIndex)
-        var nextQuestion = questionArray[nextQuestionIndex!]
-        
-        
-        if nextQuestion is MultipleChoiceQuestion {
+        if questionArray.count > nextQuestionIndex! {
+            var nextQuestion = questionArray[nextQuestionIndex!]
             
-            question = questionArray[nextQuestionIndex!] as! MultipleChoiceQuestion
             
-            // Sets all of the on screen elements to the data that was passed to this view controller
-            questionText.text = question?.questionText
-            choiceAbutton.setTitle(question?.choiceA, for: .normal)
-            choiceBbutton.setTitle(question?.choiceB, for: .normal)
-            choiceCbutton.setTitle(question?.choiceC, for: .normal)
-            choiceDbutton.setTitle(question?.choiceD, for: .normal)
-            
-            if question?.relatedImage != nil {
-                relatedImage.image = question?.relatedImage
+            if nextQuestion is MultipleChoiceQuestion {
+                
+                question = questionArray[nextQuestionIndex!] as! MultipleChoiceQuestion
+                
+                // Sets all of the on screen elements to the data that was passed to this view controller
+                questionText.text = question?.questionText
+                choiceAbutton.setTitle(question?.choiceA, for: .normal)
+                choiceBbutton.setTitle(question?.choiceB, for: .normal)
+                choiceCbutton.setTitle(question?.choiceC, for: .normal)
+                choiceDbutton.setTitle(question?.choiceD, for: .normal)
+                
+                if question?.relatedImage != nil {
+                    relatedImage.image = question?.relatedImage
+                }
+                
+                // Creates the incorrect message alert
+                incorrectAlertController = UIAlertController(title: "Incorrect!", message:
+                    question?.answerExplanation, preferredStyle: UIAlertControllerStyle.alert)
+                
+                incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
+                    // Calls the function to load the nex question
+                    self.nextQuestion()
+                    
+                }))
+                
+            }
+            else if nextQuestion is TextResponseQuestion {
+                
+                // Peforms the segue
+                performSegue(withIdentifier: "MultipleChoiceToTextResponse", sender: nil)
+                
             }
             
-            // Creates the incorrect message alert
-            incorrectAlertController = UIAlertController(title: "Incorrect!", message:
-                question?.answerExplanation, preferredStyle: UIAlertControllerStyle.alert)
+            nextQuestionIndex = nextQuestionIndex! + 1
+        } else {
             
-            incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
-                // Calls the function to load the nex question
-                self.nextQuestion()
-               
+            // Creates the final message to be displayed in the output alert
+            let finalMessage = "You answered " + String(score!) + " out of " + String(questionArray.count) + " correctly."
+            
+            // Creates the variable for the alert controller
+            var FinalScoreAlertController: UIAlertController?
+            
+            // Calculates the percentage of questions answered correctly which will determine the headline that will be output.
+            let percentage = (Double(score!)/Double((questionArray.count)) * 100)
+            
+            // If statements to set the correct alert header for the score achieved by the user
+            if percentage < 30.0 {
+                FinalScoreAlertController = UIAlertController(title: "Try Harder!", message:
+                    finalMessage, preferredStyle: UIAlertControllerStyle.alert)
+            }
+            else if percentage < 70.0 && percentage > 30.0 {
+                FinalScoreAlertController = UIAlertController(title: "Good!", message:
+                    finalMessage, preferredStyle: UIAlertControllerStyle.alert)
+            }
+            else {
+                FinalScoreAlertController = UIAlertController(title: "Well Done!", message:
+                    finalMessage, preferredStyle: UIAlertControllerStyle.alert)
+            }
+            
+            // Adds an action to the alert controller to allow the user to return home after the test
+            FinalScoreAlertController!.addAction(UIAlertAction(title: "Return Home", style: UIAlertActionStyle.default,handler: { action in
+                
+                // Return Home
+                
             }))
+
+            // Shows the alert
+            self.present(FinalScoreAlertController!, animated: true, completion: nil)
             
         }
-        else if nextQuestion is TextResponseQuestion {
-            
-            // Peforms the segue
-            performSegue(withIdentifier: "MultipleChoiceToTextResponse", sender: nil)
-            
-        }
-        
-         nextQuestionIndex = nextQuestionIndex! + 1
         
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // Sets the value of the next question
         var nextQuestion = questionArray[nextQuestionIndex!]
         
-        print("SEGUE")
-        print(segue.identifier)
-        
+        // Checks the type of the next question and acts accordingly
         if nextQuestion is TextResponseQuestion {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
@@ -160,6 +196,7 @@ class MultipleChoiceViewController: UIViewController {
             destinationVC.question = nextQuestion as! TextResponseQuestion
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
+            destinationVC.score = score
             
         }
         

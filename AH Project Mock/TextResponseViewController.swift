@@ -13,6 +13,7 @@ class TextResponseViewController: UIViewController {
     var question: TextResponseQuestion?
     var questionArray = [Any]()
     var nextQuestionIndex: Int?
+    var score: Int?
     
     // Links to UI elements
     @IBOutlet weak var questionText: UILabel!
@@ -36,18 +37,21 @@ class TextResponseViewController: UIViewController {
         else {
             
             if textResponseInput.text == question?.correctAnswer {
-                    
-                    // Creates an alert message to display to the user.
-                    let alertController = UIAlertController(title: "Correct!", message:
-                        "Well Done! That is the correct answer.", preferredStyle: UIAlertControllerStyle.alert)
-                    
-                    alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
-                        // Calls the function to load the nex question
-                        self.nextQuestion()
-                    }))
-                    
-                    // Displays the alert.
-                    self.present(alertController, animated: true, completion: nil)
+                
+                // Increments the score variable by one
+                score = score! + 1
+                
+                // Creates an alert message to display to the user.
+                let alertController = UIAlertController(title: "Correct!", message:
+                    "Well Done! That is the correct answer.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
+                    // Calls the function to load the nex question
+                    self.nextQuestion()
+                }))
+                
+                // Displays the alert.
+                self.present(alertController, animated: true, completion: nil)
                     
                 }
                 else {
@@ -119,9 +123,38 @@ class TextResponseViewController: UIViewController {
             nextQuestionIndex = nextQuestionIndex! + 1
         } else {
             
+            // Creates the final message to be displayed in the output alert
+            let finalMessage = "You answered " + String(score!) + " out of " + String(questionArray.count) + " correctly."
             
-            // Display the results of the short test.
+            // Creates the variable for the alert controller
+            var FinalScoreAlertController: UIAlertController?
             
+            // Calculates the percentage of questions answered correctly which will determine the headline that will be output.
+            let percentage = (Double(score!)/Double((questionArray.count)) * 100)
+            
+            // If statements to set the correct alert header for the score achieved by the user
+            if percentage < 30.0 {
+                FinalScoreAlertController = UIAlertController(title: "Try Harder!", message:
+                    finalMessage, preferredStyle: UIAlertControllerStyle.alert)
+            }
+            else if percentage < 70.0 && percentage > 30.0 {
+                FinalScoreAlertController = UIAlertController(title: "Good!", message:
+                    finalMessage, preferredStyle: UIAlertControllerStyle.alert)
+            }
+            else {
+                FinalScoreAlertController = UIAlertController(title: "Well Done!", message:
+                    finalMessage, preferredStyle: UIAlertControllerStyle.alert)
+            }
+            
+            // Adds an action to the alert controller to allow the user to return home after the test
+            FinalScoreAlertController!.addAction(UIAlertAction(title: "Return Home", style: UIAlertActionStyle.default,handler: { action in
+                
+                // Return Home
+                
+            }))
+            
+            // Shows the alert
+            self.present(FinalScoreAlertController!, animated: true, completion: nil)
             
         }
         
@@ -131,8 +164,10 @@ class TextResponseViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // Sets the value of the next question
         var nextQuestion = questionArray[nextQuestionIndex!]
         
+        // Checks the type of the next question and acts accordingly
         if nextQuestion is MultipleChoiceQuestion {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
@@ -140,6 +175,7 @@ class TextResponseViewController: UIViewController {
             destinationVC.question = nextQuestion as! MultipleChoiceQuestion
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
+            destinationVC.score = score
             
         }
         

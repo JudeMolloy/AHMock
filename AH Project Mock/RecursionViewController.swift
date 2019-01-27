@@ -17,6 +17,8 @@ class RecursionViewController: UIViewController {
     }
 
     var recursionArray = [Any]()
+    var questionArray = [Any]()
+    var question: Any?
     
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var fibonacciInput: UITextField!
@@ -78,6 +80,34 @@ class RecursionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        var score = 0
+        
+        if segue.identifier == "RecursionToTextResponse" {
+            
+            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
+            let destinationVC = segue.destination as! TextResponseViewController
+            destinationVC.question = question as! TextResponseQuestion
+            destinationVC.questionArray = questionArray
+            destinationVC.nextQuestionIndex = 1
+            destinationVC.score = score
+
+        }
+        else if segue.identifier == "RecursionToMultipleChoice" {
+            
+            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
+            let destinationVC = segue.destination as! MultipleChoiceViewController
+            destinationVC.question = question as! MultipleChoiceQuestion
+            destinationVC.questionArray = questionArray
+            destinationVC.nextQuestionIndex = 1
+            destinationVC.score = score
+            
+        }
+        
+    }
+    
+    
+    @IBAction func startTestButtonPressed(_ sender: Any) {
+        
         func getRandomQuestions(array: [Any]) -> [Any] {
             var questionArray = [Any]()
             var questionsFrom = array
@@ -91,45 +121,15 @@ class RecursionViewController: UIViewController {
             return questionArray
         }
         
-        var questionArray = getRandomQuestions(array: recursionArray)
+        questionArray = getRandomQuestions(array: recursionArray)
         
-        print(segue)
-        
-        let question = questionArray[0]
-        
-        if segue.identifier == "RecursionToTextResponse" {
-            
-            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
-            let destinationVC = segue.destination as! TextResponseViewController
-            destinationVC.question = question as! TextResponseQuestion
-            destinationVC.questionArray = questionArray
-            destinationVC.nextQuestionIndex = 1
-
-        }
-        else if segue.identifier == "RecursionToMultipleChoice" {
-            
-            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
-            let destinationVC = segue.destination as! MultipleChoiceViewController
-            destinationVC.question = question as! MultipleChoiceQuestion
-            destinationVC.questionArray = questionArray
-            destinationVC.nextQuestionIndex = 1
-            
-        }
-        
-        
-    }
-    
-    
-    @IBAction func startTestButtonPressed(_ sender: Any) {
-        
-        // Creates a constant to store the first question in questions array.
-        let question = recursionArray[0]
+        question = questionArray[0]
         
         
         // Checks to see the type of the first question and then segues to the appropriate view controller.
         if question is MultipleChoiceQuestion {
             
-            print("About to perform TR segue")
+            print("About to perform MC segue")
             // Performs the segue
             performSegue(withIdentifier: "RecursionToMultipleChoice", sender: nil)
         

@@ -403,8 +403,8 @@
                     <connections>
                         <outlet property="answerLabel" destination="TDN-PI-4NB" id="hh0-ZQ-Egi"/>
                         <outlet property="fibonacciInput" destination="Hlg-qE-Czk" id="N2A-jT-lAV"/>
-                        <segue destination="6Dh-fa-UiX" kind="show" identifier="RecursionToMultipleChoice" id="Kxe-Ic-udV"/>
                         <segue destination="Rk9-DA-scQ" kind="show" identifier="RecursionToTextResponse" id="hpY-tH-tu2"/>
+                        <segue destination="6Dh-fa-UiX" kind="show" identifier="RecursionToMultipleChoice" id="V7i-ed-Vrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8x-b2-KtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -619,11 +619,11 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question-mark-blackandwhite" translatesAutoresizingMaskIntoConstraints="NO" id="mPN-hl-OvV">
-                                <rect key="frame" x="59" y="171.5" width="258" height="170"/>
+                                <rect key="frame" x="59" y="171.5" width="258" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="0wo-tb-gDf"/>
                                     <constraint firstAttribute="width" constant="258" id="3b5-ZU-XJg"/>
-                                    <constraint firstAttribute="height" constant="170" id="beB-jw-39t"/>
+                                    <constraint firstAttribute="height" constant="150" id="beB-jw-39t"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which is the Fastest Sorting Algorithm?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-d7-foP">
@@ -636,7 +636,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ism-lD-HFh">
-                                <rect key="frame" x="50" y="366.5" width="275" height="30"/>
+                                <rect key="frame" x="50" y="346.5" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="v4d-hO-Y20"/>
                                 </constraints>
