@@ -93,21 +93,11 @@ class RecursionViewController: UIViewController {
         
         var questionArray = getRandomQuestions(array: recursionArray)
         
-        print("HFHGHGHHGHGHG")
-        print(questionArray)
-        print(questionArray.count)
-        
+        print(segue)
         
         let question = questionArray[0]
         
-        print("SEGUE")
-        print(segue.identifier)
-        
-        
-        if question is TextResponseQuestion {
-            
-            print("is TR QN")
-            
+        if segue.identifier == "RecursionToTextResponse" {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! TextResponseViewController
@@ -116,9 +106,7 @@ class RecursionViewController: UIViewController {
             destinationVC.nextQuestionIndex = 1
 
         }
-        else if question is MultipleChoiceQuestion {
-            
-            print("is MC QN")
+        else if segue.identifier == "RecursionToMultipleChoice" {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! MultipleChoiceViewController

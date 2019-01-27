@@ -47,7 +47,10 @@ class MultipleChoiceViewController: UIViewController {
         incorrectAlertController = UIAlertController(title: "Incorrect!", message:
             question?.answerExplanation, preferredStyle: UIAlertControllerStyle.alert)
         
-        incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: nil))
+        incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
+            // Calls the function to load the nex question
+            self.nextQuestion()
+        }))
         
         // Do any additional setup after loading the view.
     }
@@ -81,7 +84,10 @@ class MultipleChoiceViewController: UIViewController {
             let alertController = UIAlertController(title: "Correct!", message:
                 "Well Done! That is the correct answer.", preferredStyle: UIAlertControllerStyle.alert)
             
-            alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
+                // Calls the function to load the nex question
+                self.nextQuestion()
+            }))
             
             // Displays the alert.
             self.present(alertController, animated: true, completion: nil)
@@ -91,8 +97,6 @@ class MultipleChoiceViewController: UIViewController {
             self.present(incorrectAlertController as! UIViewController, animated: true, completion: nil)
             
         }
-        // Calls the function to load the nex question
-        nextQuestion()
     }
     
     func nextQuestion() {
@@ -123,7 +127,11 @@ class MultipleChoiceViewController: UIViewController {
             incorrectAlertController = UIAlertController(title: "Incorrect!", message:
                 question?.answerExplanation, preferredStyle: UIAlertControllerStyle.alert)
             
-            incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: nil))
+            incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
+                // Calls the function to load the nex question
+                self.nextQuestion()
+               
+            }))
             
         }
         else if nextQuestion is TextResponseQuestion {

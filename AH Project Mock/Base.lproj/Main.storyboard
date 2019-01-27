@@ -314,7 +314,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="choiceAbuttonPressed:" destination="6Dh-fa-UiX" eventType="touchUpInside" id="CGf-D9-mbl"/>
                                                     <action selector="startTestButtonPressed:" destination="WfT-NP-l90" eventType="touchUpInside" id="NqA-2H-sz3"/>
                                                 </connections>
                                             </button>
@@ -404,8 +403,8 @@
                     <connections>
                         <outlet property="answerLabel" destination="TDN-PI-4NB" id="hh0-ZQ-Egi"/>
                         <outlet property="fibonacciInput" destination="Hlg-qE-Czk" id="N2A-jT-lAV"/>
-                        <segue destination="Rk9-DA-scQ" kind="show" identifier="RecursionToTextResponse" id="JTt-YG-csv"/>
                         <segue destination="6Dh-fa-UiX" kind="show" identifier="RecursionToMultipleChoice" id="Kxe-Ic-udV"/>
+                        <segue destination="Rk9-DA-scQ" kind="show" identifier="RecursionToTextResponse" id="hpY-tH-tu2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8x-b2-KtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -694,7 +693,7 @@
         <image name="banner" width="748" height="136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JTt-YG-csv"/>
+        <segue reference="hpY-tH-tu2"/>
         <segue reference="IQq-bS-Ijy"/>
     </inferredMetricsTieBreakers>
 </document>
