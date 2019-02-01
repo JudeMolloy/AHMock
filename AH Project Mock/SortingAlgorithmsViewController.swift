@@ -1,74 +1,26 @@
 //
-//  RecursionViewController.swift
+//  SortingAlgorithmsViewController.swift
 //  AH Project Mock
 //
-//  Created by Jude Molloy on 07/12/2018.
-//  Copyright © 2018 Jude Molloy. All rights reserved.
+//  Created by Jude Molloy on 28/01/2019.
+//  Copyright © 2019 Jude Molloy. All rights reserved.
 //
 
 import UIKit
 
-class RecursionViewController: UIViewController {
+class SortingAlgorithmsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         // Do any additional setup after loading the view.
     }
     
     
     // Initialises the variables required
-    var recursionArray = [Any]()
+    var sortingAlgorithmsArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
-    
-    // Creates links to the UI elements
-    @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var fibonacciInput: UITextField!
-    
-    // Function that is called when the user enters their input into the interactive fibonacci sequence number finder.
-    @IBAction func inputFibonacci(_ sender: Any) {
-        
-        // Checks to see if the input is empty
-        if (fibonacciInput.text?.isEmpty)! {
-            
-            // Create alert to display validation message
-            let alertController = UIAlertController(title: "Error", message:
-                "The text input cannot be left blank.", preferredStyle: UIAlertControllerStyle.alert)
-            
-            alertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
-            
-            // Display the alert that has just been created
-            self.present(alertController, animated: true, completion: nil)
-        }
-        // Check to see that the number that was inputted was in the valid range.
-        else if Int((fibonacciInput.text)!)! < 1 || Int((fibonacciInput.text)!)! > 25 {
-            
-            
-            // Create alert to display validation message
-            let alertController = UIAlertController(title: "Error", message:
-                "Please enter a number between 1 and 25.", preferredStyle: UIAlertControllerStyle.alert)
-            
-            alertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
-            
-            // Display the alert that has just been created
-            self.present(alertController, animated: true, completion: nil)
-            
-            
-        }
-        else {
-            // Create constant to store the value that has been validated.
-            let number = Int(fibonacciInput.text!)!
-            
-            // Output the result of the recursively found result to the screen
-            if let result = fibonacci(number: number) as? Int {
-                answerLabel.text = "Answer: " + String(result)
-            }
-        }
-        
-        
-        
-    }
     
     // Simple recursive fibonacci function
     func fibonacci(number: Int) -> Int {
@@ -88,7 +40,7 @@ class RecursionViewController: UIViewController {
         var score = 0
         
         // If statement to decide which segue to prepare for
-        if segue.identifier == "RecursionToTextResponse" {
+        if segue.identifier == "SortingAlgorithmsToTextResponse" {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! TextResponseViewController
@@ -96,9 +48,9 @@ class RecursionViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
-
+            
         }
-        else if segue.identifier == "RecursionToMultipleChoice" {
+        else if segue.identifier == "SortingAlgorithmsToMultipleChoice" {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! MultipleChoiceViewController
@@ -132,7 +84,7 @@ class RecursionViewController: UIViewController {
         }
         
         // Sets the question array to the result of the function call
-        questionArray = getRandomQuestions(array: recursionArray)
+        questionArray = getRandomQuestions(array: sortingAlgorithmsArray)
         
         // Selects the first question
         question = questionArray[0]
@@ -142,13 +94,13 @@ class RecursionViewController: UIViewController {
         if question is MultipleChoiceQuestion {
             
             // Performs the segue
-            performSegue(withIdentifier: "RecursionToMultipleChoice", sender: nil)
-        
+            performSegue(withIdentifier: "SortingAlgorithmsToMultipleChoice", sender: nil)
+            
         }
         else if question is TextResponseQuestion {
             
             // Peforms the segue
-            performSegue(withIdentifier: "RecursionToTextResponse", sender: nil)
+            performSegue(withIdentifier: "SortingAlgorithmsToTextResponse", sender: nil)
             
         }
         
@@ -159,5 +111,5 @@ class RecursionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 }

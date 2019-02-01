@@ -17,6 +17,7 @@
 		CE9992542190D9D60018B647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9992532190D9D60018B647 /* Assets.xcassets */; };
 		CE9992572190D9D60018B647 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9992552190D9D60018B647 /* LaunchScreen.storyboard */; };
 		CE9992602190E75A0018B647 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99925F2190E75A0018B647 /* RoundedButton.swift */; };
+		CEE3517E21FFAB520081BE1D /* SortingAlgorithmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3517D21FFAB520081BE1D /* SortingAlgorithmsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE9992562190D9D60018B647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9992582190D9D60018B647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE99925F2190E75A0018B647 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		CEE3517D21FFAB520081BE1D /* SortingAlgorithmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingAlgorithmsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				CE0959D021BABD2D00A76671 /* RecursionViewController.swift */,
 				CE8AA31C21B1372700E29D3F /* MutltipleChoiceViewController.swift */,
 				CE9992502190D9D60018B647 /* Main.storyboard */,
+				CEE3517D21FFAB520081BE1D /* SortingAlgorithmsViewController.swift */,
 				CE9992532190D9D60018B647 /* Assets.xcassets */,
 				CE9992552190D9D60018B647 /* LaunchScreen.storyboard */,
 				CE9992582190D9D60018B647 /* Info.plist */,
@@ -166,6 +169,7 @@
 				CE8AA31F21B13D3E00E29D3F /* TextResponseViewController.swift in Sources */,
 				CE9992602190E75A0018B647 /* RoundedButton.swift in Sources */,
 				CE99924D2190D9D60018B647 /* AppDelegate.swift in Sources */,
+				CEE3517E21FFAB520081BE1D /* SortingAlgorithmsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,6 +33,13 @@ class MultipleChoiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Call the function to set all of the question data to the UI elements
+        setScreenData(question: question)
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func setScreenData(question: MultipleChoiceQuestion?) {
         // Sets all of the on screen elements to the data that was passed to this view controller
         questionText.text = question?.questionText
         choiceAbutton.setTitle(question?.choiceA, for: .normal)
@@ -52,8 +59,6 @@ class MultipleChoiceViewController: UIViewController {
             // Calls the function to load the nex question
             self.nextQuestion()
         }))
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -113,27 +118,7 @@ class MultipleChoiceViewController: UIViewController {
                 
                 question = questionArray[nextQuestionIndex!] as! MultipleChoiceQuestion
                 
-                // Sets all of the on screen elements to the data that was passed to this view controller
-                questionText.text = question?.questionText
-                choiceAbutton.setTitle(question?.choiceA, for: .normal)
-                choiceBbutton.setTitle(question?.choiceB, for: .normal)
-                choiceCbutton.setTitle(question?.choiceC, for: .normal)
-                choiceDbutton.setTitle(question?.choiceD, for: .normal)
-                
-                if question?.relatedImage != nil {
-                    relatedImage.image = question?.relatedImage
-                }
-                
-                // Creates the incorrect message alert
-                incorrectAlertController = UIAlertController(title: "Incorrect!", message:
-                    question?.answerExplanation, preferredStyle: UIAlertControllerStyle.alert)
-                
-                incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
-                    // Calls the function to load the nex question
-                    self.nextQuestion()
-                    
-                }))
-                
+                setScreenData(question: question)
             }
             else if nextQuestion is TextResponseQuestion {
                 
@@ -151,7 +136,7 @@ class MultipleChoiceViewController: UIViewController {
             // Creates the variable for the alert controller
             var FinalScoreAlertController: UIAlertController?
             
-            // Calculates the percentage of questions answered correctly which will determine the headline that will be output.
+            // Calculates the percentage of questions answered correctly which will determine the headline that will be outputted.
             let percentage = (Double(score!)/Double((questionArray.count)) * 100)
             
             // If statements to set the correct alert header for the score achieved by the user
@@ -173,6 +158,9 @@ class MultipleChoiceViewController: UIViewController {
                 
                 // Return Home
                 
+                // Peforms the segue
+                self.performSegue(withIdentifier: "MultipleChoiceToHome", sender: nil)
+                
             }))
 
             // Shows the alert
@@ -185,21 +173,23 @@ class MultipleChoiceViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // Sets the value of the next question
-        var nextQuestion = questionArray[nextQuestionIndex!]
-        
-        // Checks the type of the next question and acts accordingly
-        if nextQuestion is TextResponseQuestion {
+        if questionArray.count > nextQuestionIndex! {
             
-            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
-            let destinationVC = segue.destination as! TextResponseViewController
-            destinationVC.question = nextQuestion as! TextResponseQuestion
-            destinationVC.questionArray = questionArray
-            destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
-            destinationVC.score = score
+            // Sets the value of the next question
+            var nextQuestion = questionArray[nextQuestionIndex!]
             
+            // Checks the type of the next question and acts accordingly
+            if nextQuestion is TextResponseQuestion {
+                
+                // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
+                let destinationVC = segue.destination as! TextResponseViewController
+                destinationVC.question = nextQuestion as! TextResponseQuestion
+                destinationVC.questionArray = questionArray
+                destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
+                destinationVC.score = score
+                
+            }
         }
-        
         
     }
     

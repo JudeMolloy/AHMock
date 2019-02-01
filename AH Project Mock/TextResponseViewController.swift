@@ -151,6 +151,10 @@ class TextResponseViewController: UIViewController {
                 
                 // Return Home
                 
+                // Peforms the segue
+                self.performSegue(withIdentifier: "TextResponseToHome", sender: nil)
+                
+                
             }))
             
             // Shows the alert
@@ -164,21 +168,24 @@ class TextResponseViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // Sets the value of the next question
-        var nextQuestion = questionArray[nextQuestionIndex!]
-        
-        // Checks the type of the next question and acts accordingly
-        if nextQuestion is MultipleChoiceQuestion {
+        if questionArray.count > nextQuestionIndex! {
             
-            // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
-            let destinationVC = segue.destination as! MultipleChoiceViewController
-            destinationVC.question = nextQuestion as! MultipleChoiceQuestion
-            destinationVC.questionArray = questionArray
-            destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
-            destinationVC.score = score
+            // Sets the value of the next question
+            var nextQuestion = questionArray[nextQuestionIndex!]
+            
+            // Checks the type of the next question and acts accordingly
+            if nextQuestion is MultipleChoiceQuestion {
+                
+                // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
+                let destinationVC = segue.destination as! MultipleChoiceViewController
+                destinationVC.question = nextQuestion as! MultipleChoiceQuestion
+                destinationVC.questionArray = questionArray
+                destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
+                destinationVC.score = score
+                
+            }
             
         }
-        
         
     }
 
