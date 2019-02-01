@@ -173,14 +173,14 @@
             <objects>
                 <viewController id="WfT-NP-l90" customClass="RecursionViewController" customModule="AH_Project_Mock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="61R-c4-Vzs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-M1-Cb8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ak0-P7-fdf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="fRP-kk-dLc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -292,7 +292,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ler-sH-7sN" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
-                                                <rect key="frame" x="47" y="1137" width="280" height="48"/>
+                                                <rect key="frame" x="47" y="1737" width="280" height="48"/>
                                                 <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="JTG-op-AZf"/>
@@ -318,9 +318,9 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJK-DT-EMA">
-                                                <rect key="frame" x="15" y="783" width="344" height="179"/>
+                                                <rect key="frame" x="15" y="783" width="344" height="170"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="179" id="V4e-ea-U07"/>
+                                                    <constraint firstAttribute="height" constant="170" id="V4e-ea-U07"/>
                                                     <constraint firstAttribute="width" constant="344" id="ibJ-Wu-o1I"/>
                                                 </constraints>
                                                 <string key="text">Recursive funtions need a base case to stop them running forever and causing an execution error due to a stack overlfow. In the Fibonacci pseudocode above the base case would be line number 2 as it is the condition that will cause the function to exit the recursive loop.</string>
@@ -328,12 +328,35 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mR2-Zg-I4c">
+                                                <rect key="frame" x="15" y="953" width="344" height="638"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="344" id="OoW-wo-Ckk"/>
+                                                    <constraint firstAttribute="height" constant="638" id="XbF-cV-ZhS"/>
+                                                </constraints>
+                                                <mutableString key="text">Recursion is also used in a search algorithm called a binary search. A binary search is much more efficient than a linear search. Using Big O Notation we can analyse the effeciency of algorithms to decide which algorithm is the best to use - Big O Notation is out of the scope of this article, however, you can read more about it here: judemolloy.com/timecomplexity.html                         Linear search is O(n) which is linear time as the algorithm will definitely need to check , whereas binary search is O(log n) which is logarithmic time in base 2 (binary). Logarithmic time is more desirable as it is faster than linear time. Binary search uses divide an conquer to repeatedly half the search space. Binary Search is logarithmic time as the logarithm of the size of the input list - in binary - is just the number of times the list can be halved. Binary search is a very good search algorithm and can be implemented recursively and non-recursively, however, both methods require that the list be sorted before the search takes place. </mutableString>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[2, 3, 5, 8, 9, 12, 15, 18, 22, 25, 28]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GV-bp-39f">
+                                                <rect key="frame" x="15" y="1599" width="344" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="344" id="hQS-58-GqF"/>
+                                                    <constraint firstAttribute="height" constant="26" id="tSD-Tg-raB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="7Ba-mu-xLK" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="0X0-e0-lHF"/>
+                                            <constraint firstAttribute="trailing" secondItem="mR2-Zg-I4c" secondAttribute="trailing" constant="16" id="0ai-gS-cjC"/>
                                             <constraint firstItem="7Ba-mu-xLK" firstAttribute="top" secondItem="cIA-P7-UN6" secondAttribute="bottom" constant="31" id="0w8-6s-CSB"/>
                                             <constraint firstAttribute="trailing" secondItem="UJK-DT-EMA" secondAttribute="trailing" constant="16" id="239-aI-eKY"/>
+                                            <constraint firstItem="1GV-bp-39f" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="40a-T8-NQr"/>
                                             <constraint firstAttribute="trailing" secondItem="ZfT-OR-VKA" secondAttribute="trailing" constant="120" id="4Tq-Tt-aBc"/>
                                             <constraint firstItem="gNC-Tv-R5O" firstAttribute="top" secondItem="ZfT-OR-VKA" secondAttribute="bottom" constant="2.5" id="7Ko-I8-6Ci"/>
                                             <constraint firstItem="ler-sH-7sN" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="47" id="93i-fX-C3E"/>
@@ -365,18 +388,22 @@
                                             <constraint firstAttribute="trailing" secondItem="cIA-P7-UN6" secondAttribute="trailing" constant="16" id="hW9-uZ-EIK"/>
                                             <constraint firstItem="HM4-pm-99N" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="haH-tX-umD"/>
                                             <constraint firstAttribute="trailing" secondItem="7Ba-mu-xLK" secondAttribute="trailing" constant="16" id="iRq-JK-dX6"/>
+                                            <constraint firstItem="mR2-Zg-I4c" firstAttribute="top" secondItem="UJK-DT-EMA" secondAttribute="bottom" id="ig2-DM-huQ"/>
+                                            <constraint firstItem="1GV-bp-39f" firstAttribute="top" secondItem="mR2-Zg-I4c" secondAttribute="bottom" constant="8" id="kOk-v1-dpi"/>
                                             <constraint firstItem="fRP-kk-dLc" firstAttribute="top" secondItem="Ak0-P7-fdf" secondAttribute="top" id="kYb-gW-M8c"/>
                                             <constraint firstItem="gNC-Tv-R5O" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="m0Z-MQ-LOA"/>
                                             <constraint firstItem="ZfT-OR-VKA" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="120" id="mZx-SQ-pLG"/>
                                             <constraint firstItem="UJK-DT-EMA" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="mkZ-Te-6XS"/>
                                             <constraint firstItem="OLS-3g-lHE" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="35" id="o7g-X6-48C"/>
                                             <constraint firstItem="H9s-8M-Fas" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="62" id="oFs-cc-7Tk"/>
+                                            <constraint firstItem="mR2-Zg-I4c" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="oyI-kp-eFs"/>
                                             <constraint firstItem="OLS-3g-lHE" firstAttribute="top" secondItem="gNC-Tv-R5O" secondAttribute="bottom" constant="183" id="pKT-5A-Y8F"/>
                                             <constraint firstItem="HM4-pm-99N" firstAttribute="top" secondItem="H9s-8M-Fas" secondAttribute="bottom" constant="8" id="t0E-Y5-qiK"/>
+                                            <constraint firstAttribute="trailing" secondItem="1GV-bp-39f" secondAttribute="trailing" constant="16" id="tr8-Nu-JTa"/>
                                             <constraint firstItem="xvs-J8-ehf" firstAttribute="top" secondItem="ZfT-OR-VKA" secondAttribute="bottom" constant="2.5" id="wd9-ta-i7d"/>
                                             <constraint firstItem="UJK-DT-EMA" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="15" id="xIJ-vP-xPT"/>
                                             <constraint firstItem="OZV-Ve-Wfv" firstAttribute="leading" secondItem="Ak0-P7-fdf" secondAttribute="leading" constant="140" id="xK4-oX-znw"/>
-                                            <constraint firstAttribute="height" constant="1200" id="zdq-fS-Bdu"/>
+                                            <constraint firstAttribute="height" constant="1800" id="zdq-fS-Bdu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -399,7 +426,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ad3-Hp-jg8"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1800"/>
                     <connections>
                         <outlet property="answerLabel" destination="TDN-PI-4NB" id="hh0-ZQ-Egi"/>
                         <outlet property="fibonacciInput" destination="Hlg-qE-Czk" id="N2A-jT-lAV"/>
@@ -409,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8x-b2-KtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="33"/>
+            <point key="canvasLocation" x="968.79999999999995" y="32.383808095952027"/>
         </scene>
         <!--Multiple Choice View Controller-->
         <scene sceneID="4UC-AQ-JS7">
@@ -799,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gn-fM-qqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="1399.7001499250375"/>
+            <point key="canvasLocation" x="1017" y="1891"/>
         </scene>
     </scenes>
     <resources>

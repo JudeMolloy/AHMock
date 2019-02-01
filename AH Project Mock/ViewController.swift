@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         recursionArray.append(temp1)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        var temp2 = TextResponseQuestion(questionText: "Which line in the code below is the base case for the recursive function? (Please enter the number of the line only.)", correctAnswer: "2", answerExplanation: "Line number 2 is the base case line as it is the condition that stops the", relatedImage: UIImage(named: "Fibonacci Code"))
+        var temp2 = TextResponseQuestion(questionText: "Which line in the code below is the base case for the recursive function? (Please enter the number of the line only.)", correctAnswer: "2", answerExplanation: "Line number 2 is the base case line as it is the condition that stops the recursive funtion from recursing forever.", relatedImage: UIImage(named: "Fibonacci Code"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         recursionArray.append(temp1)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "Which line in the code below is the base case for the recursive function? (Please enter the number of the line only.)", correctAnswer: "2", answerExplanation: "Line number 2 is the base case line as it is the condition that stops the", relatedImage: UIImage(named: "Fibonacci Code"))
+        temp2 = TextResponseQuestion(questionText: "Which line in the code is recursion used? (Please enter the number of the line only.)", correctAnswer: "2", answerExplanation: "Line number 4 is the recursive line as it is the condition that calls itself.", relatedImage: UIImage(named: "Fibonacci Code"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
