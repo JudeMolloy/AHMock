@@ -17,6 +17,9 @@ class MultipleChoiceViewController: UIViewController {
     var question: MultipleChoiceQuestion?
     var score: Int?
     
+    @IBAction func homeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "MultipleChoiceToHome", sender: nil)
+    }
     
     // Links to the UI features of on screen elements
     @IBOutlet weak var questionText: UILabel!
@@ -179,7 +182,7 @@ class MultipleChoiceViewController: UIViewController {
             var nextQuestion = questionArray[nextQuestionIndex!]
             
             // Checks the type of the next question and acts accordingly
-            if nextQuestion is TextResponseQuestion {
+            if segue.identifier == "MultipleChoiceToTextResponse" {
                 
                 // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
                 let destinationVC = segue.destination as! TextResponseViewController

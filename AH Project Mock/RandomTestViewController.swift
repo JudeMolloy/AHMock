@@ -1,14 +1,14 @@
 //
-//  SortingAlgorithmsViewController.swift
+//  RandomTestViewController.swift
 //  AH Project Mock
 //
-//  Created by Jude Molloy on 28/01/2019.
+//  Created by Jude Molloy on 05/02/2019.
 //  Copyright © 2019 Jude Molloy. All rights reserved.
 //
 
 import UIKit
 
-class SortingAlgorithmsViewController: UIViewController {
+class RandomTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,11 +17,11 @@ class SortingAlgorithmsViewController: UIViewController {
     }
     
     @IBAction func homeButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "SortingAlgorithmsToHome", sender: Any?.self)
+        performSegue(withIdentifier: "OOPToHome", sender: Any?.self)
     }
     
     // Initialises the variables required
-    var sortingAlgorithmsArray = [Any]()
+    var OOPArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
     
@@ -32,7 +32,7 @@ class SortingAlgorithmsViewController: UIViewController {
         var score = 0
         
         // If statement to decide which segue to prepare for
-        if segue.identifier == "SortingAlgorithmsToTextResponse" {
+        if segue.identifier == "OOPToTextResponse" {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! TextResponseViewController
@@ -42,7 +42,7 @@ class SortingAlgorithmsViewController: UIViewController {
             destinationVC.score = score
             
         }
-        else if segue.identifier == "SortingAlgorithmsToMultipleChoice" {
+        else if segue.identifier == "OOPToMultipleChoice" {
             
             // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
             let destinationVC = segue.destination as! MultipleChoiceViewController
@@ -59,7 +59,15 @@ class SortingAlgorithmsViewController: UIViewController {
     @IBAction func startTestButtonPressed(_ sender: Any) {
         
         // Function to select random questions from the possible questions
-        func getRandomQuestions(array: [Any]) -> [Any] {
+        func getMixedRandomQuestions(array: [Any]) -> [Any] {
+            
+            
+            
+                        return questionArray
+        }
+        
+        func getFiveQuestions(from array: [Any]) {
+            
             var questionsFrom = array
             
             // Loops through the array for 5 questions
@@ -71,11 +79,11 @@ class SortingAlgorithmsViewController: UIViewController {
                 questionArray.append(questionsFrom[index])
                 questionsFrom.remove(at: index)
             }
-            return questionArray
+
         }
         
         // Sets the question array to the result of the function call
-        questionArray = getRandomQuestions(array: sortingAlgorithmsArray)
+        
         
         // Selects the first question
         question = questionArray[0]
@@ -85,13 +93,13 @@ class SortingAlgorithmsViewController: UIViewController {
         if question is MultipleChoiceQuestion {
             
             // Performs the segue
-            performSegue(withIdentifier: "SortingAlgorithmsToMultipleChoice", sender: nil)
+            performSegue(withIdentifier: "OOPToMultipleChoice", sender: nil)
             
         }
         else if question is TextResponseQuestion {
             
             // Peforms the segue
-            performSegue(withIdentifier: "SortingAlgorithmsToTextResponse", sender: nil)
+            performSegue(withIdentifier: "OOPToTextResponse", sender: nil)
             
         }
         
@@ -102,5 +110,4 @@ class SortingAlgorithmsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }

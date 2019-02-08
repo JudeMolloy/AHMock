@@ -10,9 +10,15 @@ import UIKit
 
 class RecursionViewController: UIViewController {
 
+    // Create and error alert to display validation message
+    let errorAlertController = UIAlertController(title: "Error", message:
+        "The text input cannot be left blank.", preferredStyle: UIAlertControllerStyle.alert)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        // Add action to the error alert controller for empty field.
+        errorAlertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
         // Do any additional setup after loading the view.
     }
     
@@ -21,10 +27,40 @@ class RecursionViewController: UIViewController {
     var recursionArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
+    var inputArray = [2, 3, 5, 8, 9, 12, 15, 18, 22, 25, 28]
+    var functionCalls = 0
+    var foundBinarySearch = "The value was not found in the list."
+
+    
+    @IBAction func homeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "RecursionToHome", sender: Any?.self)
+    }
     
     // Creates links to the UI elements
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var fibonacciInput: UITextField!
+    
+    @IBOutlet weak var binarySearchFoundLabel: UILabel!
+    @IBOutlet weak var functionCallsLabel: UILabel!
+    @IBOutlet weak var binarySearchInput: UITextField!
+    
+    @IBAction func inputBinarySearch(_ sender: Any) {
+        functionCalls = 0
+        if (binarySearchInput.text?.isEmpty)! {
+            
+            // Display the alert that has just been created
+            self.present(errorAlertController, animated: true, completion: nil)
+        } else {
+            
+            // Calls the recursive binary search function with the input data.
+            recursiveBinarySearch(array: inputArray, searchValue: Int(binarySearchInput.text!)!, min: 0, max: 10)
+            
+            // Updates the UI elements to display the data from the binary search call.
+            binarySearchFoundLabel.text = foundBinarySearch
+            functionCallsLabel.text = "Number of Function Calls: " + String(functionCalls)
+            
+        }
+    }
     
     // Function that is called when the user enters their input into the interactive fibonacci sequence number finder.
     @IBAction func inputFibonacci(_ sender: Any) {
@@ -32,16 +68,10 @@ class RecursionViewController: UIViewController {
         // Checks to see if the input is empty
         if (fibonacciInput.text?.isEmpty)! {
             
-            // Create alert to display validation message
-            let alertController = UIAlertController(title: "Error", message:
-                "The text input cannot be left blank.", preferredStyle: UIAlertControllerStyle.alert)
-            
-            alertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
-            
             // Display the alert that has just been created
-            self.present(alertController, animated: true, completion: nil)
+            self.present(errorAlertController, animated: true, completion: nil)
         }
-        // Check to see that the number that was inputted was in the valid range.
+        // Check to see that the number that was inputted was in the valid range. Anything more than 25 is excessive on the phone memory.
         else if Int((fibonacciInput.text)!)! < 1 || Int((fibonacciInput.text)!)! > 25 {
             
             
@@ -81,6 +111,30 @@ class RecursionViewController: UIViewController {
         }
     }
     
+    // Recursive Binary Search algorithm.
+    func recursiveBinarySearch(array: [Int], searchValue: Int, min: Int, max: Int) -> Int {
+        functionCalls += 1
+        // Calculate the middle index.
+        let mid = Int((min + max) / 2)
+        
+        // Checks to see if the whole array has been searched.
+        if min > max {
+            foundBinarySearch = "The value was not found in the list."
+            return -1
+        } else if array[mid] == searchValue {
+            // Returns the number if the value is found.
+            foundBinarySearch = "The value was found in the list at index " + String(mid) + "."
+            return mid
+        } else if array[mid] > searchValue {
+            // Searches the lower half of the array if the search value is less than the mid value.
+            return recursiveBinarySearch(array: array, searchValue: searchValue, min: min, max: mid - 1)
+        } else {
+            // Searches the upper half of the array if the search value is greater than the mid value.
+            return recursiveBinarySearch(array: array, searchValue: searchValue, min: mid + 1, max: max)
+        }
+        
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -116,7 +170,6 @@ class RecursionViewController: UIViewController {
         
         // Function to select random questions from the possible questions
         func getRandomQuestions(array: [Any]) -> [Any] {
-            var questionArray = [Any]()
             var questionsFrom = array
             
             // Loops through the array for 5 questions

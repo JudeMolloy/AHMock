@@ -15,6 +15,10 @@ class TextResponseViewController: UIViewController {
     var nextQuestionIndex: Int?
     var score: Int?
     
+    @IBAction func homeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "TextResponseToHome", sender: nil)
+    }
+    
     // Links to UI elements
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var relatedImage: UIImageView!
@@ -66,6 +70,11 @@ class TextResponseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setScreenData(question: question)
+        // Do any additional setup after loading the view.
+    }
+    
+    func setScreenData(question: TextResponseQuestion?) {
         questionText.text = question?.questionText
         
         if question?.relatedImage != nil {
@@ -80,8 +89,6 @@ class TextResponseViewController: UIViewController {
             // Calls the function to load the nex question
             self.nextQuestion()
         }))
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -95,22 +102,7 @@ class TextResponseViewController: UIViewController {
             
                 question = questionArray[nextQuestionIndex!] as! TextResponseQuestion
             
-                // Sets all of the on screen elements to the data that was passed to this view controller
-                questionText.text = question?.questionText
-                
-                // Checks to see if the image needs to be set
-                if question?.relatedImage != nil {
-                    relatedImage.image = question?.relatedImage
-                }
-            
-                // Creates the incorrect message alert
-                incorrectAlertController = UIAlertController(title: "Incorrect!", message:
-                question?.answerExplanation, preferredStyle: UIAlertControllerStyle.alert)
-            
-                incorrectAlertController!.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: { action in
-                    // Calls the function to load the nex question
-                    self.nextQuestion()
-                }))
+                setScreenData(question: question)
             
             }
             else if nextQuestion is MultipleChoiceQuestion {
@@ -174,7 +166,7 @@ class TextResponseViewController: UIViewController {
             var nextQuestion = questionArray[nextQuestionIndex!]
             
             // Checks the type of the next question and acts accordingly
-            if nextQuestion is MultipleChoiceQuestion {
+            if segue.identifier == "TextResponseToMultipleChoice" {
                 
                 // Sets the destination view controller and then passes the data to the corresponding variable in that view controller
                 let destinationVC = segue.destination as! MultipleChoiceViewController
