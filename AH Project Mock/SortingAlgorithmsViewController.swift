@@ -24,7 +24,56 @@ class SortingAlgorithmsViewController: UIViewController {
     var sortingAlgorithmsArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
+    var swapped: Bool = true
+
+    @IBOutlet weak var outputArrayLabel: UILabel!
     
+    @IBAction func bubbleSortButtonPressed(_ sender: Any) {
+        
+        // Creates the input array.
+        var inputArray = [5, 19, 3, 6, 12, 1, 16, 2, 10, 18]
+        
+        var outputArray = bubbleSort(inputArray: &inputArray)
+        
+        outputArrayLabel.text = "["
+        
+        for number in outputArray {
+            if number == 19 {
+                self.outputArrayLabel.text = outputArrayLabel.text! + (String(number) + "]")
+            } else {
+                self.outputArrayLabel.text = outputArrayLabel.text! + (String(number) + ", ")
+            }
+        }
+        
+        
+        
+    }
+    
+    // Bubble Sort Algorithm
+    func bubbleSort(inputArray: inout [Int]) -> [Int] {
+        //Set the swapped variable to true
+        swapped = true
+        
+        // Continues to loop through the array while it is unsorted
+        while swapped == true {
+            
+            // Sets the swapped variable to false
+            swapped = false
+            
+            // Loops through the array
+            for i in 1 ... (inputArray.count - 1) {
+                // If the element to the left is greater than the one on the right swapped is set to true and a swap takes place.
+                if inputArray[i] < inputArray[i - 1] {
+                    swapped = true
+                    let temp = inputArray[i]
+                    inputArray[i] = inputArray[i - 1]
+                    inputArray[i - 1] = temp
+                }
+            }
+        }
+        // Returns the now sorted array.
+        return inputArray
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

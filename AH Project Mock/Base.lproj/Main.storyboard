@@ -559,24 +559,25 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question-mark-blackandwhite" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-lu-h5C">
-                                <rect key="frame" x="59" y="171.5" width="258" height="170"/>
+                                <rect key="frame" x="59" y="246" width="258" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="9UL-zu-5H2"/>
                                     <constraint firstAttribute="width" constant="258" id="DtS-02-aUF"/>
-                                    <constraint firstAttribute="height" constant="170" id="N5I-e0-CqT"/>
+                                    <constraint firstAttribute="height" constant="100" id="N5I-e0-CqT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which is the Fastest Sorting Algorithm?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDv-ml-UFK">
-                                <rect key="frame" x="59" y="86" width="258" height="45.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which is the Fastest Sorting Algorithm?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDv-ml-UFK">
+                                <rect key="frame" x="59" y="86" width="258" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="KTA-bY-5cw"/>
+                                    <constraint firstAttribute="height" constant="120" id="yvt-Xf-Mvw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Yl-VT-eX6">
-                                <rect key="frame" x="47" y="381.5" width="280" height="252"/>
+                                <rect key="frame" x="47" y="386" width="280" height="252"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7y-Zu-iOF" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="48"/>
@@ -847,14 +848,14 @@
             <objects>
                 <viewController id="HoS-9y-PEt" customClass="SortingAlgorithmsViewController" customModule="AH_Project_Mock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BXg-NA-nQO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB5-9G-lhi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqU-6j-V8r">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Jx5-h5-mbP">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -871,7 +872,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8T3-lk-U5p" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
-                                                <rect key="frame" x="47" y="1137" width="280" height="48"/>
+                                                <rect key="frame" x="47" y="2437" width="280" height="48"/>
                                                 <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="1bu-uB-zx8"/>
@@ -896,16 +897,42 @@
                                                     <action selector="startTestButtonPressed:" destination="HoS-9y-PEt" eventType="touchUpInside" id="XXY-r2-q29"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llz-fS-cU2" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
+                                                <rect key="frame" x="47" y="1796" width="280" height="48"/>
+                                                <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="4zr-Mo-yGD"/>
+                                                    <constraint firstAttribute="height" constant="48" id="aOL-Hc-3Iu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Perform Bubble Sort">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.062745098040000002" green="0.20000000000000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bubbleSortButtonPressed:" destination="HoS-9y-PEt" eventType="touchUpInside" id="tDN-c2-bxe"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorting Algorithms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMH-DM-wYm">
                                                 <rect key="frame" x="56" y="79" width="263" height="39"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfQ-bJ-dTN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfQ-bJ-dTN">
                                                 <rect key="frame" x="15" y="126" width="344" height="220"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="179" id="7L9-tu-7LV"/>
+                                                    <constraint firstAttribute="height" constant="220" id="TT7-dt-9Ot"/>
                                                     <constraint firstAttribute="width" constant="344" id="sJ5-Sf-o7O"/>
                                                 </constraints>
                                                 <string key="text">Sorting algorithms are very important in the world of Computer Science and also in the real world. A lot of businesses and organisations use sorting algorithms to sort their data. Sorting data allows for it to be easily accessed and is sometimes neccessary for other algorithms to work, for example, binary search requires that the data be initially sorted.</string>
@@ -927,24 +954,117 @@
                                                     <action selector="homeButtonPressed:" destination="HoS-9y-PEt" eventType="touchUpInside" id="PUL-I3-hDu"/>
                                                 </connections>
                                             </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97r-37-Mht">
+                                                <rect key="frame" x="8" y="346" width="359" height="616"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="kqK-W3-XXf"/>
+                                                    <constraint firstAttribute="height" constant="616" id="sIc-mG-50D"/>
+                                                </constraints>
+                                                <string key="text">Selection sort is arguably the most simple algorithm that can be used to sort a list of items. In this article we'll focus on selections sort with two arrays. For example, to use selection sort on a list of numbers the selection sort algorithm repeatedly uses the "Find Min" algorithm to find the smallest value in the unsorted array. Once this value has been identified the value is added at the lowest available index of the sorted array that initially would be empty. The value in the unsorted array will be replaced with a very large number e.g. 9999 depending on the magnitude of the numbers in the array so that the number is not found in the next find min loop. This algorithm requires two arrays, one for the unsorted input array and one for the output array. For this reason selection sort is not a very good algorithm in terms of space complexity. Selection sort has a worst-case time complexity of O(n²). You can reaad more about space complexity here: https://www.tutorialspoint.com/What-is-Space-Complexity</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IX9-Cc-Qmt">
+                                                <rect key="frame" x="8" y="1217" width="359" height="521"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="XxV-6a-gCr"/>
+                                                    <constraint firstAttribute="height" constant="521" id="s9Z-7d-8Zj"/>
+                                                </constraints>
+                                                <string key="text">Bubble sort is another sorting algorithm. Aptly named the bubble sort algorithm seems to "bubble" items to the top of the list. Unlike the selection sort algorithm only requires one array. Bubble sort is identifiable by the fact that it uses a boolean variable to determine whether a swap has taken place in the most recent run through the list. This improves the efficiency of the sorting algorithm as if no swap has taken place then the list has been sorted and no more loops through the list will need to take place. Bubble sort compares each item in the array with the next value in the array and if the first is greater then a swap takes place. This continues until the end of the array and the greatest value has "bubbled" to the top. Bubble sort has a worst-case time complexity of O(n²). Take a look at the unsorted array below and press the button to sort it using a bubble sort.</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board-453758_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="cVZ-im-3fW">
+                                                <rect key="frame" x="16" y="970" width="343" height="239"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="343" id="vH8-sp-vN6"/>
+                                                    <constraint firstAttribute="height" constant="239" id="vxL-Nd-bCG"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[5, 19, 3, 6, 12, 1, 16, 2, 10, 18]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-ke-PIx">
+                                                <rect key="frame" x="15" y="1746" width="344" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="344" id="eb6-DP-UYi"/>
+                                                    <constraint firstAttribute="height" constant="29" id="o7a-Y0-j1b"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ouput Array:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzi-qp-EMD">
+                                                <rect key="frame" x="115" y="1869" width="144" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="144" id="27P-gF-aPc"/>
+                                                    <constraint firstAttribute="height" constant="29" id="Z1d-wu-Lps"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press The Button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfT-bb-duj">
+                                                <rect key="frame" x="15" y="1906" width="344" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="344" id="Xoz-Ld-gtX"/>
+                                                    <constraint firstAttribute="width" constant="344" id="fLg-4d-D6b"/>
+                                                    <constraint firstAttribute="height" constant="29" id="xx6-a2-eLL"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29" id="zCw-W7-ewq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="rMH-DM-wYm" secondAttribute="trailing" constant="56" id="0RE-zx-90D"/>
                                             <constraint firstAttribute="trailing" secondItem="8T3-lk-U5p" secondAttribute="trailing" constant="48" id="10X-JW-SZ7"/>
+                                            <constraint firstItem="zfT-bb-duj" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="15" id="1eq-Cs-045"/>
+                                            <constraint firstAttribute="trailing" secondItem="zfT-bb-duj" secondAttribute="trailing" constant="16" id="42A-jT-1PM"/>
+                                            <constraint firstItem="IX9-Cc-Qmt" firstAttribute="top" secondItem="cVZ-im-3fW" secondAttribute="bottom" constant="8" id="49c-Iu-J9F"/>
                                             <constraint firstItem="Jx5-h5-mbP" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" id="6DV-ZG-Hwx"/>
+                                            <constraint firstItem="BfQ-bJ-dTN" firstAttribute="top" secondItem="rMH-DM-wYm" secondAttribute="bottom" constant="8" id="7Vb-D0-Qg1"/>
+                                            <constraint firstAttribute="trailing" secondItem="cVZ-im-3fW" secondAttribute="trailing" constant="16" id="7bx-QH-xrT"/>
                                             <constraint firstItem="rMH-DM-wYm" firstAttribute="top" secondItem="Jx5-h5-mbP" secondAttribute="bottom" constant="8" id="8as-dL-mhc"/>
                                             <constraint firstAttribute="trailing" secondItem="Jx5-h5-mbP" secondAttribute="trailing" id="8gO-xr-08M"/>
+                                            <constraint firstItem="Yzi-qp-EMD" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="115" id="9aU-9Q-W2L"/>
                                             <constraint firstAttribute="bottom" secondItem="8T3-lk-U5p" secondAttribute="bottom" constant="15" id="9hu-uV-vVK"/>
+                                            <constraint firstItem="zfT-bb-duj" firstAttribute="top" secondItem="Yzi-qp-EMD" secondAttribute="bottom" constant="8" id="E3p-xl-LY1"/>
+                                            <constraint firstItem="BfQ-bJ-dTN" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="15" id="EKi-5S-pcu"/>
+                                            <constraint firstItem="9Dz-ke-PIx" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="15" id="FqA-3T-4km"/>
                                             <constraint firstItem="w21-x2-zbs" firstAttribute="top" secondItem="qqU-6j-V8r" secondAttribute="top" constant="16" id="JnP-4U-VRo"/>
+                                            <constraint firstItem="97r-37-Mht" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="KSQ-vr-Cwx"/>
+                                            <constraint firstAttribute="trailing" secondItem="IX9-Cc-Qmt" secondAttribute="trailing" constant="8" id="NZD-yb-0DF"/>
                                             <constraint firstAttribute="trailing" secondItem="5oZ-9e-eCK" secondAttribute="trailing" constant="8" id="OMF-IV-Rez"/>
+                                            <constraint firstItem="97r-37-Mht" firstAttribute="top" secondItem="BfQ-bJ-dTN" secondAttribute="bottom" id="SNq-no-0d1"/>
+                                            <constraint firstItem="9Dz-ke-PIx" firstAttribute="top" secondItem="IX9-Cc-Qmt" secondAttribute="bottom" constant="8" id="SkD-m8-06P"/>
                                             <constraint firstItem="Jx5-h5-mbP" firstAttribute="top" secondItem="qqU-6j-V8r" secondAttribute="top" id="TAe-eh-4v5"/>
+                                            <constraint firstItem="llz-fS-cU2" firstAttribute="top" secondItem="9Dz-ke-PIx" secondAttribute="bottom" constant="21" id="Ueg-J7-bbZ"/>
+                                            <constraint firstItem="cVZ-im-3fW" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="16" id="YFZ-sz-SI6"/>
+                                            <constraint firstItem="IX9-Cc-Qmt" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="Yb2-81-Np6"/>
+                                            <constraint firstItem="cVZ-im-3fW" firstAttribute="top" secondItem="97r-37-Mht" secondAttribute="bottom" constant="8" id="YoF-0b-5Y5"/>
                                             <constraint firstItem="w21-x2-zbs" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="140" id="YzU-Px-ets"/>
+                                            <constraint firstItem="cVZ-im-3fW" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="16" id="enE-Lk-5zN"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yzi-qp-EMD" secondAttribute="trailing" constant="116" id="fJs-XM-oZH"/>
                                             <constraint firstItem="w21-x2-zbs" firstAttribute="width" secondItem="w21-x2-zbs" secondAttribute="height" multiplier="47:25" id="hCQ-8I-0vG"/>
+                                            <constraint firstAttribute="trailing" secondItem="llz-fS-cU2" secondAttribute="trailing" constant="48" id="jHG-30-XET"/>
+                                            <constraint firstAttribute="trailing" secondItem="97r-37-Mht" secondAttribute="trailing" constant="8" id="jgp-e2-KjP"/>
+                                            <constraint firstItem="llz-fS-cU2" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="47" id="kua-RW-30T"/>
                                             <constraint firstItem="5oZ-9e-eCK" firstAttribute="top" secondItem="qqU-6j-V8r" secondAttribute="top" constant="25" id="nTw-qX-xdn"/>
-                                            <constraint firstAttribute="height" constant="1200" id="nsd-R3-e64"/>
+                                            <constraint firstAttribute="height" constant="2500" id="nsd-R3-e64"/>
+                                            <constraint firstAttribute="trailing" secondItem="BfQ-bJ-dTN" secondAttribute="trailing" constant="16" id="oTh-9w-laH"/>
+                                            <constraint firstAttribute="trailing" secondItem="cVZ-im-3fW" secondAttribute="trailing" constant="16" id="p6H-Xu-WF6"/>
                                             <constraint firstItem="8T3-lk-U5p" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="47" id="ph3-e6-x5H"/>
                                             <constraint firstItem="rMH-DM-wYm" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="56" id="s8e-6A-rwO"/>
+                                            <constraint firstItem="Yzi-qp-EMD" firstAttribute="top" secondItem="llz-fS-cU2" secondAttribute="bottom" constant="25" id="tZQ-c4-wDe"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Dz-ke-PIx" secondAttribute="trailing" constant="16" id="taB-Gt-ScG"/>
                                             <constraint firstAttribute="trailing" secondItem="w21-x2-zbs" secondAttribute="trailing" constant="141" id="yGq-Fd-637"/>
                                         </constraints>
                                     </view>
@@ -968,8 +1088,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rO3-3R-WzM"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="2500"/>
                     <connections>
+                        <outlet property="outputArrayLabel" destination="zfT-bb-duj" id="e40-dN-0lu"/>
                         <segue destination="6Dh-fa-UiX" kind="show" identifier="SortingAlgorithmsToMultipleChoice" id="tIw-Ej-btc"/>
                         <segue destination="Rk9-DA-scQ" kind="show" identifier="SortingAlgorithmsToTextResponse" id="DbU-M4-pDp"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SortingAlgorithmsToHome" id="cj1-A2-4t1"/>
@@ -978,21 +1099,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gn-fM-qqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4MQ-D0-ccn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="2218"/>
+            <point key="canvasLocation" x="1005.6" y="2217.3913043478265"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="C3k-FS-Aru">
             <objects>
                 <viewController id="mMW-Tr-dzK" customClass="OOPViewController" customModule="AH_Project_Mock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Np-Le-RDH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-pR-Nm4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhp-pz-QRy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="jNP-n9-GEY">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -1009,7 +1130,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKo-wM-Iie" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
-                                                <rect key="frame" x="47" y="1137" width="280" height="48"/>
+                                                <rect key="frame" x="47" y="2437" width="280" height="48"/>
                                                 <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="HtO-ut-8I7"/>
@@ -1040,13 +1161,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7j-1O-NPm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7j-1O-NPm">
                                                 <rect key="frame" x="15" y="126" width="344" height="220"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="220" id="4H3-hU-oSX"/>
                                                     <constraint firstAttribute="width" constant="344" id="7ur-Vo-jhY"/>
-                                                    <constraint firstAttribute="height" constant="179" id="bS1-Vp-c0j"/>
                                                 </constraints>
-                                                <string key="text">Sorting algorithms are very important in the world of Computer Science and also in the real world. A lot of businesses and organisations use sorting algorithms to sort their data. Sorting data allows for it to be easily accessed and is sometimes neccessary for other algorithms to work, for example, binary search requires that the data be initially sorted.</string>
+                                                <string key="text">Sorting algorithms are very important in the world of Computer Science. A lot of businesses and organisations use these algorithms to sort their data. Sorting data allows for it to be easily accessed and is sometimes neccessary for other algorithms to work, for example, binary search requires that the data be initially sorted.</string>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1066,6 +1187,20 @@
                                                     <action selector="homeButtonPressed:" destination="mMW-Tr-dzK" eventType="touchUpInside" id="Yhq-pL-D4K"/>
                                                 </connections>
                                             </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDq-h4-lg7">
+                                                <rect key="frame" x="8" y="350" width="359" height="595"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="Cvx-8z-Wbs"/>
+                                                    <constraint firstAttribute="height" constant="595" id="QVz-YW-Byf"/>
+                                                </constraints>
+                                                <string key="text">Selection sort is arguably the most simple algorithm that can be used to sort a list of items. In this article we'll focus on selections sort with two arrays. For example, to use selection sort on a list of numbers the selection sort algorithm repeatedly uses the "Find Min" algorithm to find the smallest value in the unsorted array. Once this value has been identified the value is added at the lowest available index of the sorted array that initially would be empty. The value in the unsorted array will be replaced with a very large number e.g. 9999 depending on the magnitude of the numbers in the array so that the number is not found in the next find min loop. This algorithm requires two arrays, one for the unsorted input array and one for the output array. For this reason selection sort is not a very good algorithm in terms of space complexity. You can reaad more about space complexity here: https://www.tutorialspoint.com/What-is-Space-Complexity</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1073,16 +1208,22 @@
                                             <constraint firstItem="jNP-n9-GEY" firstAttribute="top" secondItem="hhp-pz-QRy" secondAttribute="top" id="6pw-jr-5Hc"/>
                                             <constraint firstAttribute="trailing" secondItem="aCd-DL-xnm" secondAttribute="trailing" constant="8" id="Bwm-1x-I2H"/>
                                             <constraint firstAttribute="bottom" secondItem="XKo-wM-Iie" secondAttribute="bottom" constant="15" id="IzH-CW-JD2"/>
+                                            <constraint firstAttribute="trailing" secondItem="aDq-h4-lg7" secondAttribute="trailing" constant="8" id="KkW-nI-ChB"/>
                                             <constraint firstAttribute="trailing" secondItem="jNP-n9-GEY" secondAttribute="trailing" id="Ogl-AH-MmT"/>
                                             <constraint firstAttribute="trailing" secondItem="e69-XU-E48" secondAttribute="trailing" constant="56" id="Rkp-Z5-1du"/>
                                             <constraint firstItem="e69-XU-E48" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="56" id="ViU-ED-xLi"/>
                                             <constraint firstAttribute="trailing" secondItem="E21-Cb-xS7" secondAttribute="trailing" constant="141" id="WeP-J4-0y7"/>
+                                            <constraint firstItem="aDq-h4-lg7" firstAttribute="top" secondItem="f7j-1O-NPm" secondAttribute="bottom" constant="4" id="WtJ-Wr-vwN"/>
                                             <constraint firstItem="jNP-n9-GEY" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" id="gfU-AI-soz"/>
                                             <constraint firstItem="E21-Cb-xS7" firstAttribute="width" secondItem="E21-Cb-xS7" secondAttribute="height" multiplier="47:25" id="h1i-cs-BfK"/>
                                             <constraint firstItem="aCd-DL-xnm" firstAttribute="top" secondItem="hhp-pz-QRy" secondAttribute="top" constant="25" id="hi7-8I-bLG"/>
-                                            <constraint firstAttribute="height" constant="1200" id="juh-uV-B0P"/>
+                                            <constraint firstAttribute="height" constant="2500" id="juh-uV-B0P"/>
+                                            <constraint firstItem="f7j-1O-NPm" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="lKJ-gI-hh9"/>
+                                            <constraint firstItem="f7j-1O-NPm" firstAttribute="top" secondItem="e69-XU-E48" secondAttribute="bottom" constant="8" id="lNC-Y5-Idc"/>
                                             <constraint firstItem="XKo-wM-Iie" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="47" id="mf1-8T-e42"/>
                                             <constraint firstAttribute="trailing" secondItem="XKo-wM-Iie" secondAttribute="trailing" constant="48" id="nJe-1b-ga5"/>
+                                            <constraint firstItem="aDq-h4-lg7" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="8" id="obs-Pb-Ukx"/>
+                                            <constraint firstAttribute="trailing" secondItem="f7j-1O-NPm" secondAttribute="trailing" constant="16" id="tD9-SF-tiX"/>
                                             <constraint firstItem="e69-XU-E48" firstAttribute="top" secondItem="jNP-n9-GEY" secondAttribute="bottom" constant="8" id="uRr-Rg-Ei0"/>
                                             <constraint firstItem="E21-Cb-xS7" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="140" id="ye2-aR-k8z"/>
                                         </constraints>
@@ -1107,7 +1248,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jbZ-Hl-2Be"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="2500"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="OOPToHome" id="R5G-fc-cEa"/>
                         <segue destination="Rk9-DA-scQ" kind="show" identifier="OOPToTextResponse" id="JwR-Pc-E9A"/>
@@ -1117,7 +1258,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKa-lE-KtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DtU-rM-meB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2191" y="1159"/>
+            <point key="canvasLocation" x="2189.5999999999999" y="1158.6206896551726"/>
         </scene>
     </scenes>
     <resources>
@@ -1128,11 +1269,12 @@
         <image name="Question-mark-blackandwhite" width="500" height="500"/>
         <image name="Recursive Binary Search Algorithm Swift Thin" width="477" height="706"/>
         <image name="banner" width="748" height="136"/>
+        <image name="board-453758_960_720" width="960" height="652"/>
         <image name="whitehome" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hpY-tH-tu2"/>
-        <segue reference="V7i-ed-Vrc"/>
-        <segue reference="m75-NU-MBG"/>
+        <segue reference="DbU-M4-pDp"/>
+        <segue reference="tIw-Ej-btc"/>
+        <segue reference="cj1-A2-4t1"/>
     </inferredMetricsTieBreakers>
 </document>

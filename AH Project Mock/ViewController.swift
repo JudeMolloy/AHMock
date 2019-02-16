@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         recursionArray.append(temp2)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "Using the following code, determine the 4th Fibonacci number.", correctAnswer: "3", answerExplanation: "Working through the Fibonacci function the 4th number in the sequence is 3.", relatedImage: UIImage(named: "Fibonacci Code"))
+        temp2 = TextResponseQuestion(questionText: "Using the following code, determine the 4th Fibonacci number. (Please enter an integer only.)", correctAnswer: "3", answerExplanation: "Working through the Fibonacci function the 4th number in the sequence is 3.", relatedImage: UIImage(named: "Fibonacci Code"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
@@ -77,19 +77,19 @@ class ViewController: UIViewController {
         recursionArray.append(temp1)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "How many Binary Search function calls would be required to find the number 12?", correctAnswer: "1", answerExplanation: "The number 12 is in the middle position of the array. This is why only 1 call to the function is required as it will be found straight away. ", relatedImage: UIImage(named: "binarysearchlist"))
+        temp2 = TextResponseQuestion(questionText: "How many Binary Search function calls would be required to find the number 12? (Please enter an integer only.)", correctAnswer: "1", answerExplanation: "The number 12 is in the middle position of the array. This is why only 1 call to the function is required as it will be found straight away. ", relatedImage: UIImage(named: "binarysearchlist"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "How many Binary Search function calls would be required to find the number 22?", correctAnswer: "2", answerExplanation: "The number 22 will require 2 function calls to find it.", relatedImage: UIImage(named: "binarysearchlist"))
+        temp2 = TextResponseQuestion(questionText: "How many Binary Search function calls would be required to find the number 22? (Please enter an integer only.)", correctAnswer: "2", answerExplanation: "The number 22 will require 2 function calls to find it.", relatedImage: UIImage(named: "binarysearchlist"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "How many Binary Search function calls would be required to find the number 3?", correctAnswer: "4", answerExplanation: "The number 3 will require 4 function calls which is the maximum number of calls required for a list of this size.", relatedImage: UIImage(named: "binarysearchlist"))
+        temp2 = TextResponseQuestion(questionText: "How many Binary Search function calls would be required to find the number 3? (Please enter an integer only.)", correctAnswer: "4", answerExplanation: "The number 3 will require 4 function calls which is the maximum number of calls required for a list of this size.", relatedImage: UIImage(named: "binarysearchlist"))
         
         // Appends the new TR question to the recursion question array
         recursionArray.append(temp2)
@@ -111,6 +111,66 @@ class ViewController: UIViewController {
         
         // Appends the new MC question to the recursion question array
         recursionArray.append(temp1)
+        
+        
+        
+        // SORTING ALGORITHMS.
+        
+        
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "What is the worst-case time complexity for Selection Sort?", choiceA: "O(log n)", choiceB: "O(1)", choiceC: "O(n²)", choiceD: "O(n)", correctChoice: "C", answerExplanation: "Selection sort has a worst-case time complexity of O(n²).", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "What is the worst-case time complexity for Bubble Sort?", choiceA: "O(n²)", choiceB: "O(1)", choiceC: "O(n log n)", choiceD: "O(n)", correctChoice: "A", answerExplanation: "Bubble sort has a worst-case time complexity of O(n²).", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "What is the worst-case time complexity for Insertion Sort?", choiceA: "O(log n)", choiceB: "O(1)", choiceC: "O(n)", choiceD: "O(n²)", correctChoice: "D", answerExplanation: "Insertion sort has a worst-case time complexity of O(n²).", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Which of the following sorting algorithms requires two arrays?", choiceA: "Selection Sort", choiceB: "Bubble Sort", choiceC: "Quicksort", choiceD: "Insertion Sort", correctChoice: "A", answerExplanation: "Selection sort requires two arrays: the unordered input array and the output array.", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Which of the following sorting algorithms is the least efficient in terms of memory?", choiceA: "Merge Sort", choiceB: "Bubble Sort", choiceC: "Selection Sort", choiceD: "Insertion Sort", correctChoice: "C", answerExplanation: "Selection sort is the least efficient in terms of memory as it requires 2 arrays.", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "How many arrays does the selection sort algorithm require? (Please enter an integer only.)", correctAnswer: "2", answerExplanation: "The number 3 will require 4 function calls which is the maximum number of calls required for a list of this size.", relatedImage: nil)
+        
+        // Appends the new TR question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp2)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Which of the following sorting algorithms makes use of a boolean variable?", choiceA: "Merge Sort", choiceB: "Bubble Sort", choiceC: "Selection Sort", choiceD: "Insertion Sort", correctChoice: "B", answerExplanation: "Bubble sort uses a boolean variable to keep track of if a swap has taken place while looping through the array values.", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Which of the following sorting algorithms is the most efficient in terms of worst-case time complexity?", choiceA: "Quicksort", choiceB: "Bubble Sort", choiceC: "Selection Sort", choiceD: "Insertion Sort", correctChoice: "A", answerExplanation: "Quicksort is more complex than the other sorts, however, is also more efficient in a lot of cases.", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Which of the following situations would it not be suitable to use Quicksort to sort the array?", choiceA: "Many Duplicate Items", choiceB: "Large Data Set", choiceC: "No Duplicate Items", choiceD: "Small Data Set", correctChoice: "A", answerExplanation: "Quicksort is more complex than the other sorts, however, is also more efficient in a lot of cases.", relatedImage: nil)
+        
+        // Appends the new MC question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp1)
     }
     
     

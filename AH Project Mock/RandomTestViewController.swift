@@ -82,7 +82,7 @@ class RandomTestViewController: UIViewController {
 
         }
         
-        // Sets the question array to the result of the function call
+        // Sets the question array to the r esult of the function call
         
         
         // Selects the first question
