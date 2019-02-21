@@ -40,7 +40,7 @@ class TextResponseViewController: UIViewController {
         }
         else {
             
-            if textResponseInput.text == question?.correctAnswer {
+            if textResponseInput.text?.lowercased() == question?.correctAnswer {
                 
                 // Increments the score variable by one
                 score = score! + 1

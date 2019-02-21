@@ -171,6 +171,12 @@ class ViewController: UIViewController {
         
         // Appends the new MC question to the sorting algorithm question array
         sortingAlgorithmsArray.append(temp1)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "Fill in the blank from the Bubble Sort image below.", correctAnswer: "true", answerExplanation: "If a swap takes place then the swapped variable must be set to true.", relatedImage: nil)
+        
+        // Appends the new TR question to the sorting algorithm question array
+        sortingAlgorithmsArray.append(temp2)
     }
     
     

@@ -848,14 +848,14 @@
             <objects>
                 <viewController id="HoS-9y-PEt" customClass="SortingAlgorithmsViewController" customModule="AH_Project_Mock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BXg-NA-nQO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="3250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB5-9G-lhi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="3250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqU-6j-V8r">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3250"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Jx5-h5-mbP">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
@@ -872,7 +872,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8T3-lk-U5p" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
-                                                <rect key="frame" x="47" y="2437" width="280" height="48"/>
+                                                <rect key="frame" x="47" y="3187" width="280" height="48"/>
                                                 <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="1bu-uB-zx8"/>
@@ -1021,6 +1021,55 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82t-rd-0e1">
+                                                <rect key="frame" x="8" y="1943" width="359" height="384"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="384" id="3nA-fH-QgN"/>
+                                                    <constraint firstAttribute="width" constant="359" id="hdK-eh-MQ9"/>
+                                                </constraints>
+                                                <mutableString key="text">Insertion sort is another popular sorting algorithm. It is similar to how people sort a hand of cards. Insertion sort is very efficient when it comes to sorting large datasets that are nearly sorted. The algorithm compares each item in the list with the item before it. if it is less then a swap takes place. The value that was swapped is then compared to the value to the left of it again and the process continues until the value reaches a value that it is not less than. This happens to all of the values in the array to sort the array. Insertion sort is another quadratic time algorithm - it's worst case time complexity is  O(n²). </mutableString>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-h0-Tpj">
+                                                <rect key="frame" x="8" y="2335" width="359" height="196"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="196" id="96w-vF-FOT"/>
+                                                    <constraint firstAttribute="width" constant="359" id="Z4c-ns-Ozs"/>
+                                                </constraints>
+                                                <string key="text">Swapping items in an array is neccessary for most sorting algorithms so it is something worth mentioning. Usually a temporary variable is used to store one of the values while it is being replaced. This temporary value is then used to replace the other value. The code for a swap is shown below.</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swap" translatesAutoresizingMaskIntoConstraints="NO" id="twE-qz-x3O">
+                                                <rect key="frame" x="8" y="2539" width="359" height="71"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="StX-Wk-IeX"/>
+                                                    <constraint firstAttribute="height" constant="71" id="mtV-kI-rhy"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-Ka-KwV">
+                                                <rect key="frame" x="8" y="2618" width="359" height="520"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="OUC-hv-6Hm"/>
+                                                    <constraint firstAttribute="height" constant="520" id="Q7S-wU-PJK"/>
+                                                </constraints>
+                                                <mutableString key="text">Another sorting algorithm is Quicksort. The exact details of how the algorithm works is out of the scope of this article. Quicksort is a recursive algorithm that chooses a pivot value and divides the array into two sub-arrays - an array containing items smaller than the pivot value and one containing items larger. This then repeats for these sub-arrays - as would be expected with a recursive algorithm - until sub-arrays with one item in them are left. These sub-arrays are then compiled back together to form the sorted array. Quicksort works well with parallel processing and takes advantage of multi-core processors as it is a divide and conquer algorithm and can divide its tasks to different cores simultaneously. Quicksort is very efficient on large data sets, however, it is inefficient when sorting an array with many duplicate items.</mutableString>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1029,6 +1078,8 @@
                                             <constraint firstItem="zfT-bb-duj" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="15" id="1eq-Cs-045"/>
                                             <constraint firstAttribute="trailing" secondItem="zfT-bb-duj" secondAttribute="trailing" constant="16" id="42A-jT-1PM"/>
                                             <constraint firstItem="IX9-Cc-Qmt" firstAttribute="top" secondItem="cVZ-im-3fW" secondAttribute="bottom" constant="8" id="49c-Iu-J9F"/>
+                                            <constraint firstItem="twE-qz-x3O" firstAttribute="top" secondItem="2oE-h0-Tpj" secondAttribute="bottom" constant="8" id="4dQ-5m-9H0"/>
+                                            <constraint firstItem="2oE-h0-Tpj" firstAttribute="top" secondItem="82t-rd-0e1" secondAttribute="bottom" constant="8" id="67z-Jh-xpc"/>
                                             <constraint firstItem="Jx5-h5-mbP" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" id="6DV-ZG-Hwx"/>
                                             <constraint firstItem="BfQ-bJ-dTN" firstAttribute="top" secondItem="rMH-DM-wYm" secondAttribute="bottom" constant="8" id="7Vb-D0-Qg1"/>
                                             <constraint firstAttribute="trailing" secondItem="cVZ-im-3fW" secondAttribute="trailing" constant="16" id="7bx-QH-xrT"/>
@@ -1036,13 +1087,17 @@
                                             <constraint firstAttribute="trailing" secondItem="Jx5-h5-mbP" secondAttribute="trailing" id="8gO-xr-08M"/>
                                             <constraint firstItem="Yzi-qp-EMD" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="115" id="9aU-9Q-W2L"/>
                                             <constraint firstAttribute="bottom" secondItem="8T3-lk-U5p" secondAttribute="bottom" constant="15" id="9hu-uV-vVK"/>
+                                            <constraint firstAttribute="trailing" secondItem="82t-rd-0e1" secondAttribute="trailing" constant="8" id="D7c-1f-P5M"/>
                                             <constraint firstItem="zfT-bb-duj" firstAttribute="top" secondItem="Yzi-qp-EMD" secondAttribute="bottom" constant="8" id="E3p-xl-LY1"/>
                                             <constraint firstItem="BfQ-bJ-dTN" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="15" id="EKi-5S-pcu"/>
                                             <constraint firstItem="9Dz-ke-PIx" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="15" id="FqA-3T-4km"/>
                                             <constraint firstItem="w21-x2-zbs" firstAttribute="top" secondItem="qqU-6j-V8r" secondAttribute="top" constant="16" id="JnP-4U-VRo"/>
                                             <constraint firstItem="97r-37-Mht" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="KSQ-vr-Cwx"/>
+                                            <constraint firstItem="8cn-Ka-KwV" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="NRL-DK-twG"/>
                                             <constraint firstAttribute="trailing" secondItem="IX9-Cc-Qmt" secondAttribute="trailing" constant="8" id="NZD-yb-0DF"/>
                                             <constraint firstAttribute="trailing" secondItem="5oZ-9e-eCK" secondAttribute="trailing" constant="8" id="OMF-IV-Rez"/>
+                                            <constraint firstItem="82t-rd-0e1" firstAttribute="top" secondItem="zfT-bb-duj" secondAttribute="bottom" constant="8" id="RUC-lO-YNo"/>
+                                            <constraint firstAttribute="trailing" secondItem="2oE-h0-Tpj" secondAttribute="trailing" constant="8" id="Rrk-bg-Ofu"/>
                                             <constraint firstItem="97r-37-Mht" firstAttribute="top" secondItem="BfQ-bJ-dTN" secondAttribute="bottom" id="SNq-no-0d1"/>
                                             <constraint firstItem="9Dz-ke-PIx" firstAttribute="top" secondItem="IX9-Cc-Qmt" secondAttribute="bottom" constant="8" id="SkD-m8-06P"/>
                                             <constraint firstItem="Jx5-h5-mbP" firstAttribute="top" secondItem="qqU-6j-V8r" secondAttribute="top" id="TAe-eh-4v5"/>
@@ -1051,21 +1106,27 @@
                                             <constraint firstItem="IX9-Cc-Qmt" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="Yb2-81-Np6"/>
                                             <constraint firstItem="cVZ-im-3fW" firstAttribute="top" secondItem="97r-37-Mht" secondAttribute="bottom" constant="8" id="YoF-0b-5Y5"/>
                                             <constraint firstItem="w21-x2-zbs" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="140" id="YzU-Px-ets"/>
+                                            <constraint firstItem="82t-rd-0e1" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="Zdm-AG-2d4"/>
                                             <constraint firstItem="cVZ-im-3fW" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="16" id="enE-Lk-5zN"/>
                                             <constraint firstAttribute="trailing" secondItem="Yzi-qp-EMD" secondAttribute="trailing" constant="116" id="fJs-XM-oZH"/>
+                                            <constraint firstItem="2oE-h0-Tpj" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="gZT-25-Asi"/>
+                                            <constraint firstItem="8cn-Ka-KwV" firstAttribute="top" secondItem="twE-qz-x3O" secondAttribute="bottom" constant="8" id="gyU-I8-afk"/>
                                             <constraint firstItem="w21-x2-zbs" firstAttribute="width" secondItem="w21-x2-zbs" secondAttribute="height" multiplier="47:25" id="hCQ-8I-0vG"/>
                                             <constraint firstAttribute="trailing" secondItem="llz-fS-cU2" secondAttribute="trailing" constant="48" id="jHG-30-XET"/>
                                             <constraint firstAttribute="trailing" secondItem="97r-37-Mht" secondAttribute="trailing" constant="8" id="jgp-e2-KjP"/>
                                             <constraint firstItem="llz-fS-cU2" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="47" id="kua-RW-30T"/>
+                                            <constraint firstItem="twE-qz-x3O" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="8" id="lMV-KB-3fF"/>
                                             <constraint firstItem="5oZ-9e-eCK" firstAttribute="top" secondItem="qqU-6j-V8r" secondAttribute="top" constant="25" id="nTw-qX-xdn"/>
-                                            <constraint firstAttribute="height" constant="2500" id="nsd-R3-e64"/>
+                                            <constraint firstAttribute="height" constant="3250" id="nsd-R3-e64"/>
                                             <constraint firstAttribute="trailing" secondItem="BfQ-bJ-dTN" secondAttribute="trailing" constant="16" id="oTh-9w-laH"/>
                                             <constraint firstAttribute="trailing" secondItem="cVZ-im-3fW" secondAttribute="trailing" constant="16" id="p6H-Xu-WF6"/>
                                             <constraint firstItem="8T3-lk-U5p" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="47" id="ph3-e6-x5H"/>
                                             <constraint firstItem="rMH-DM-wYm" firstAttribute="leading" secondItem="qqU-6j-V8r" secondAttribute="leading" constant="56" id="s8e-6A-rwO"/>
+                                            <constraint firstAttribute="trailing" secondItem="twE-qz-x3O" secondAttribute="trailing" constant="8" id="siJ-fn-uZt"/>
                                             <constraint firstItem="Yzi-qp-EMD" firstAttribute="top" secondItem="llz-fS-cU2" secondAttribute="bottom" constant="25" id="tZQ-c4-wDe"/>
                                             <constraint firstAttribute="trailing" secondItem="9Dz-ke-PIx" secondAttribute="trailing" constant="16" id="taB-Gt-ScG"/>
                                             <constraint firstAttribute="trailing" secondItem="w21-x2-zbs" secondAttribute="trailing" constant="141" id="yGq-Fd-637"/>
+                                            <constraint firstAttribute="trailing" secondItem="8cn-Ka-KwV" secondAttribute="trailing" constant="8" id="zYS-9L-ifZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1088,7 +1149,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rO3-3R-WzM"/>
                     </view>
-                    <size key="freeformSize" width="375" height="2500"/>
+                    <size key="freeformSize" width="375" height="3250"/>
                     <connections>
                         <outlet property="outputArrayLabel" destination="zfT-bb-duj" id="e40-dN-0lu"/>
                         <segue destination="6Dh-fa-UiX" kind="show" identifier="SortingAlgorithmsToMultipleChoice" id="tIw-Ej-btc"/>
@@ -1099,7 +1160,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gn-fM-qqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4MQ-D0-ccn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1005.6" y="2217.3913043478265"/>
+            <point key="canvasLocation" x="1006" y="2755"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="C3k-FS-Aru">
@@ -1270,6 +1331,7 @@
         <image name="Recursive Binary Search Algorithm Swift Thin" width="477" height="706"/>
         <image name="banner" width="748" height="136"/>
         <image name="board-453758_960_720" width="960" height="652"/>
+        <image name="swap" width="380" height="71"/>
         <image name="whitehome" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
