@@ -128,6 +128,9 @@
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="takeTestButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LOp-ak-ld2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpX-Ds-rJL" customClass="RoundedButton" customModule="AH_Project_Mock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="392" width="280" height="48"/>
@@ -172,6 +175,8 @@
                     <connections>
                         <segue destination="HoS-9y-PEt" kind="show" identifier="HomeToSortingAlgorithms" id="QrG-6J-D0N"/>
                         <segue destination="mMW-Tr-dzK" kind="show" identifier="HomeToOOP" id="M1G-Ea-iLR"/>
+                        <segue destination="6Dh-fa-UiX" kind="show" identifier="HomeToMultipleChoice" id="Kbl-xf-XmT"/>
+                        <segue destination="Rk9-DA-scQ" kind="show" identifier="HomeToTextResponse" id="wca-YC-0r4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -558,7 +563,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Ppb-SD-aUR"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question-mark-blackandwhite" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-lu-h5C">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-lu-h5C">
                                 <rect key="frame" x="59" y="246" width="258" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="9UL-zu-5H2"/>
@@ -761,7 +766,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Sn4-lG-X4x"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question-mark-blackandwhite" translatesAutoresizingMaskIntoConstraints="NO" id="mPN-hl-OvV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="mPN-hl-OvV">
                                 <rect key="frame" x="59" y="246" width="258" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="3b5-ZU-XJg"/>
@@ -1030,7 +1035,7 @@
                                                     <constraint firstAttribute="height" constant="384" id="3nA-fH-QgN"/>
                                                     <constraint firstAttribute="width" constant="359" id="hdK-eh-MQ9"/>
                                                 </constraints>
-                                                <mutableString key="text">Insertion sort is another popular sorting algorithm. It is similar to how people sort a hand of cards. Insertion sort is very efficient when it comes to sorting large datasets that are nearly sorted. The algorithm compares each item in the list with the item before it. if it is less then a swap takes place. The value that was swapped is then compared to the value to the left of it again and the process continues until the value reaches a value that it is not less than. This happens to all of the values in the array to sort the array. Insertion sort is another quadratic time algorithm - it's worst case time complexity is  O(n²). </mutableString>
+                                                <string key="text">Insertion sort is another popular sorting algorithm. It is similar to how people sort a hand of cards. Insertion sort is very efficient when it comes to sorting large datasets that are nearly sorted. The algorithm compares each item in the list with the item before it. if it is less then a swap takes place. The value that was swapped is then compared to the value to the left of it again and the process continues until the value reaches a value that it is not less than. This happens to all of the values in the array to sort the array. Insertion sort is another quadratic time algorithm - it's worst case time complexity is  O(n²). </string>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -1065,7 +1070,7 @@
                                                     <constraint firstAttribute="width" constant="359" id="OUC-hv-6Hm"/>
                                                     <constraint firstAttribute="height" constant="520" id="Q7S-wU-PJK"/>
                                                 </constraints>
-                                                <mutableString key="text">Another sorting algorithm is Quicksort. The exact details of how the algorithm works is out of the scope of this article. Quicksort is a recursive algorithm that chooses a pivot value and divides the array into two sub-arrays - an array containing items smaller than the pivot value and one containing items larger. This then repeats for these sub-arrays - as would be expected with a recursive algorithm - until sub-arrays with one item in them are left. These sub-arrays are then compiled back together to form the sorted array. Quicksort works well with parallel processing and takes advantage of multi-core processors as it is a divide and conquer algorithm and can divide its tasks to different cores simultaneously. Quicksort is very efficient on large data sets, however, it is inefficient when sorting an array with many duplicate items.</mutableString>
+                                                <string key="text">Another sorting algorithm is Quicksort. The exact details of how the algorithm works is out of the scope of this article. Quicksort is a recursive algorithm that chooses a pivot value and divides the array into two sub-arrays - an array containing items smaller than the pivot value and one containing items larger. This then repeats for these sub-arrays - as would be expected with a recursive algorithm - until sub-arrays with one item in them are left. These sub-arrays are then compiled back together to form the sorted array. Quicksort works well with parallel processing and takes advantage of multi-core processors as it is a divide and conquer algorithm and can divide its tasks to different cores simultaneously. Quicksort is very efficient on large data sets, however, it is inefficient when sorting an array with many duplicate items.</string>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -1216,19 +1221,19 @@
                                                     <action selector="startTestButtonPressed:" destination="mMW-Tr-dzK" eventType="touchUpInside" id="fts-pE-3FU"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorting Algorithms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e69-XU-E48">
-                                                <rect key="frame" x="56" y="79" width="263" height="39"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Object-Oriented Programming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e69-XU-E48">
+                                                <rect key="frame" x="15" y="79" width="344" height="39"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7j-1O-NPm">
-                                                <rect key="frame" x="15" y="126" width="344" height="220"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="27" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7j-1O-NPm">
+                                                <rect key="frame" x="15" y="118.5" width="344" height="635"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="220" id="4H3-hU-oSX"/>
                                                     <constraint firstAttribute="width" constant="344" id="7ur-Vo-jhY"/>
+                                                    <constraint firstAttribute="height" constant="635" id="L99-W0-KyS"/>
                                                 </constraints>
-                                                <string key="text">Sorting algorithms are very important in the world of Computer Science. A lot of businesses and organisations use these algorithms to sort their data. Sorting data allows for it to be easily accessed and is sometimes neccessary for other algorithms to work, for example, binary search requires that the data be initially sorted.</string>
+                                                <mutableString key="text">imperative programming languages all have a definiite entry point in the code and for a unique bit of data have a single path through the program. Object-oriented programming is an alternative paradigm. This type of programming paradigm is based on the real world. For example there are many types of living things such as plants and animals. They will share some attributes, for example, they both need energy and have DNA, however, they differ in many areas. Animals could be then split into other groups such as fish and mammals and so on. With each of these sub groups they will inherit the properties of their super-class (parent-class) while adding their own unique properties. An example of this would be that because dogs are a type of animal they have the ability to move (motility) which they inherit from the animal class but they also have tails which not all animals have so this would be a property of the dog class and not inherited from a super-class. Shown below is a diagram that shows how the classes may be set up for vehicles.</mutableString>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1248,20 +1253,24 @@
                                                     <action selector="homeButtonPressed:" destination="mMW-Tr-dzK" eventType="touchUpInside" id="Yhq-pL-D4K"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDq-h4-lg7">
-                                                <rect key="frame" x="8" y="350" width="359" height="595"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OOPtree" translatesAutoresizingMaskIntoConstraints="NO" id="igc-Ix-OdM">
+                                                <rect key="frame" x="15" y="761.5" width="344" height="183"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="359" id="Cvx-8z-Wbs"/>
-                                                    <constraint firstAttribute="height" constant="595" id="QVz-YW-Byf"/>
+                                                    <constraint firstAttribute="width" constant="344" id="4Ti-VY-Noo"/>
+                                                    <constraint firstAttribute="height" constant="183" id="Qkc-sm-oQv"/>
                                                 </constraints>
-                                                <string key="text">Selection sort is arguably the most simple algorithm that can be used to sort a list of items. In this article we'll focus on selections sort with two arrays. For example, to use selection sort on a list of numbers the selection sort algorithm repeatedly uses the "Find Min" algorithm to find the smallest value in the unsorted array. Once this value has been identified the value is added at the lowest available index of the sorted array that initially would be empty. The value in the unsorted array will be replaced with a very large number e.g. 9999 depending on the magnitude of the numbers in the array so that the number is not found in the next find min loop. This algorithm requires two arrays, one for the unsorted input array and one for the output array. For this reason selection sort is not a very good algorithm in terms of space complexity. You can reaad more about space complexity here: https://www.tutorialspoint.com/What-is-Space-Complexity</string>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="27" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2b-LJ-PfC">
+                                                <rect key="frame" x="15" y="952" width="344" height="635"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="344" id="53o-I1-bHj"/>
+                                                    <constraint firstAttribute="height" constant="635" id="o6s-le-GDT"/>
+                                                </constraints>
+                                                <mutableString key="text">A class is a blueprint for an object. Objects have properties - which hold the data - and methods - which are functions and procedures that operate on the properties of the object. There are a few types of methods such as constructors, mutators (which include getters and setters).  Constructors handle what happens when the object is created. Mutator methods are used to operate on the properties of the object, this could be by getting the data from a property (getters) or changing/setting the data of a property (setters).</mutableString>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                            </textView>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1269,21 +1278,21 @@
                                             <constraint firstItem="jNP-n9-GEY" firstAttribute="top" secondItem="hhp-pz-QRy" secondAttribute="top" id="6pw-jr-5Hc"/>
                                             <constraint firstAttribute="trailing" secondItem="aCd-DL-xnm" secondAttribute="trailing" constant="8" id="Bwm-1x-I2H"/>
                                             <constraint firstAttribute="bottom" secondItem="XKo-wM-Iie" secondAttribute="bottom" constant="15" id="IzH-CW-JD2"/>
-                                            <constraint firstAttribute="trailing" secondItem="aDq-h4-lg7" secondAttribute="trailing" constant="8" id="KkW-nI-ChB"/>
+                                            <constraint firstAttribute="trailing" secondItem="igc-Ix-OdM" secondAttribute="trailing" constant="16" id="KS2-0K-kGv"/>
+                                            <constraint firstItem="igc-Ix-OdM" firstAttribute="top" secondItem="f7j-1O-NPm" secondAttribute="bottom" constant="8" id="KrH-pM-W2V"/>
                                             <constraint firstAttribute="trailing" secondItem="jNP-n9-GEY" secondAttribute="trailing" id="Ogl-AH-MmT"/>
                                             <constraint firstAttribute="trailing" secondItem="e69-XU-E48" secondAttribute="trailing" constant="56" id="Rkp-Z5-1du"/>
                                             <constraint firstItem="e69-XU-E48" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="56" id="ViU-ED-xLi"/>
                                             <constraint firstAttribute="trailing" secondItem="E21-Cb-xS7" secondAttribute="trailing" constant="141" id="WeP-J4-0y7"/>
-                                            <constraint firstItem="aDq-h4-lg7" firstAttribute="top" secondItem="f7j-1O-NPm" secondAttribute="bottom" constant="4" id="WtJ-Wr-vwN"/>
                                             <constraint firstItem="jNP-n9-GEY" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" id="gfU-AI-soz"/>
                                             <constraint firstItem="E21-Cb-xS7" firstAttribute="width" secondItem="E21-Cb-xS7" secondAttribute="height" multiplier="47:25" id="h1i-cs-BfK"/>
                                             <constraint firstItem="aCd-DL-xnm" firstAttribute="top" secondItem="hhp-pz-QRy" secondAttribute="top" constant="25" id="hi7-8I-bLG"/>
                                             <constraint firstAttribute="height" constant="2500" id="juh-uV-B0P"/>
                                             <constraint firstItem="f7j-1O-NPm" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="lKJ-gI-hh9"/>
                                             <constraint firstItem="f7j-1O-NPm" firstAttribute="top" secondItem="e69-XU-E48" secondAttribute="bottom" constant="8" id="lNC-Y5-Idc"/>
+                                            <constraint firstItem="igc-Ix-OdM" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="lNC-ec-XLM"/>
                                             <constraint firstItem="XKo-wM-Iie" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="47" id="mf1-8T-e42"/>
                                             <constraint firstAttribute="trailing" secondItem="XKo-wM-Iie" secondAttribute="trailing" constant="48" id="nJe-1b-ga5"/>
-                                            <constraint firstItem="aDq-h4-lg7" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="8" id="obs-Pb-Ukx"/>
                                             <constraint firstAttribute="trailing" secondItem="f7j-1O-NPm" secondAttribute="trailing" constant="16" id="tD9-SF-tiX"/>
                                             <constraint firstItem="e69-XU-E48" firstAttribute="top" secondItem="jNP-n9-GEY" secondAttribute="bottom" constant="8" id="uRr-Rg-Ei0"/>
                                             <constraint firstItem="E21-Cb-xS7" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="140" id="ye2-aR-k8z"/>
@@ -1327,16 +1336,17 @@
         <image name="EDUK8 BG2" width="750" height="1334"/>
         <image name="EDUK8 Logo" width="200" height="100"/>
         <image name="Fibonacci Code" width="657" height="115.5"/>
-        <image name="Question-mark-blackandwhite" width="500" height="500"/>
+        <image name="OOPtree" width="1280" height="720"/>
         <image name="Recursive Binary Search Algorithm Swift Thin" width="477" height="706"/>
         <image name="banner" width="748" height="136"/>
         <image name="board-453758_960_720" width="960" height="652"/>
+        <image name="question" width="500" height="500"/>
         <image name="swap" width="380" height="71"/>
         <image name="whitehome" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DbU-M4-pDp"/>
-        <segue reference="tIw-Ej-btc"/>
-        <segue reference="cj1-A2-4t1"/>
+        <segue reference="JwR-Pc-E9A"/>
+        <segue reference="hmD-UR-aoq"/>
+        <segue reference="R5G-fc-cEa"/>
     </inferredMetricsTieBreakers>
 </document>
