@@ -13,6 +13,12 @@ class HighScoreViewController: UIViewController {
     var scoreArray:[Dictionary<String, Int>] = Array()
     var score = Dictionary<String, Int>()
     
+    @IBOutlet weak var recursionScoreLabel: UILabel!
+    
+    @IBOutlet weak var OOPScoreLabel: UILabel!
+    
+    @IBOutlet weak var sortingAlgorithmsScoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +81,14 @@ class HighScoreViewController: UIViewController {
         
         print("THIS IS THE OUTPUT DICT")
         print(output)
+        updateScreenData(data: output)
         
+    }
+    
+    func updateScreenData(data: [Dictionary<String, Int>]) {
+        recursionScoreLabel.text = String(data[0]["Recursion"]!)
+        OOPScoreLabel.text = String(data[1]["OOP"]!)
+        sortingAlgorithmsScoreLabel.text = String(data[2]["Sorting Algorithms"]!)
     }
 
 }

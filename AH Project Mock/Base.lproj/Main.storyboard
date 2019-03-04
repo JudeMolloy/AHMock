@@ -1575,6 +1575,9 @@
                         <viewLayoutGuide key="safeArea" id="kd5-4h-Hba"/>
                     </view>
                     <connections>
+                        <outlet property="OOPScoreLabel" destination="VQB-xe-Nlr" id="ObX-CA-agX"/>
+                        <outlet property="recursionScoreLabel" destination="xn4-vD-YQj" id="1lT-BW-vMX"/>
+                        <outlet property="sortingAlgorithmsScoreLabel" destination="RlZ-cI-dVC" id="cIT-3G-70a"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="HSToHome" id="7FI-0v-hHi"/>
                     </connections>
                 </viewController>
