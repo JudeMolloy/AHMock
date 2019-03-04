@@ -22,7 +22,6 @@ class RecursionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     // Initialises the variables required
     var recursionArray = [Any]()
     var questionArray = [Any]()
