@@ -22,45 +22,18 @@ class HighScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        score = ["Recursion": 0]
-        scoreArray.append(score)
-        
-        score = ["OOP": 2]
-        scoreArray.append(score)
-        
-        score = ["Sorting Algorithms": 3]
-        scoreArray.append(score)
-        
-        print(scoreArray)
         generateCSV(from: scoreArray)
     
-        
+    }
+    
+    
+    @IBAction func homeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "HSToHome", sender: nil)
     }
     
     func generateCSV(from array:[Dictionary<String, Int>]) {
         
-        var csvString = ""
-        
-        
-        csvString = csvString.appending("Recursion,\(String(describing: scoreArray[0]["Recursion"]!))\n")
-        
-        csvString = csvString.appending("OOP,\(String(describing: scoreArray[1]["OOP"]!))\n")
-        
-        csvString = csvString.appending("Sorting Algorithms,\(String(describing: scoreArray[2]["Sorting Algorithms"]!))")
-        
-        print(csvString)
-        
-        
         let fileManager = FileManager.default
-        
-        do {
-            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
-            let fileURL = path.appendingPathComponent("score.csv")
-            try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
-            print("it worked")
-        } catch {
-            print(("Error creating file"))
-        }
         
         var output: [Dictionary<String, Int>] = Array()
         do {
@@ -70,17 +43,12 @@ class HighScoreViewController: UIViewController {
             let rows = file.components(separatedBy: .newlines)
             for row in rows {
                 let fields = row.replacingOccurrences(of: "\"", with: "").components(separatedBy: ",")
-                print(fields)
                 output.append([fields[0]: Int(fields[1])!])
-                print("NOWNWNWOOW")
-                print(fields)
             }
         } catch {
             print(error)
         }
         
-        print("THIS IS THE OUTPUT DICT")
-        print(output)
         updateScreenData(data: output)
         
     }

@@ -12,8 +12,6 @@ class SortingAlgorithmsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func homeButtonPressed(_ sender: Any) {
@@ -25,18 +23,23 @@ class SortingAlgorithmsViewController: UIViewController {
     var questionArray = [Any]()
     var question: Any?
     var swapped: Bool = true
+    let topic = "Sorting Algorithms"
 
     @IBOutlet weak var outputArrayLabel: UILabel!
     
+    // Function that is called when the bubble sort button is pressed.
     @IBAction func bubbleSortButtonPressed(_ sender: Any) {
         
         // Creates the input array.
         var inputArray = [5, 19, 3, 6, 12, 1, 16, 2, 10, 18]
         
+        // Sets the variable to the output of the bubble sort function call on the input array.
         var outputArray = bubbleSort(inputArray: &inputArray)
         
         outputArrayLabel.text = "["
         
+        // Formats the output so it displays nicely in the UI.
+        // Bit of a brute force method, however, it is sutiable for its basic purpose
         for number in outputArray {
             if number == 19 {
                 self.outputArrayLabel.text = outputArrayLabel.text! + (String(number) + "]")
@@ -51,6 +54,7 @@ class SortingAlgorithmsViewController: UIViewController {
     
     // Bubble Sort Algorithm
     func bubbleSort(inputArray: inout [Int]) -> [Int] {
+        
         //Set the swapped variable to true
         swapped = true
         
@@ -89,6 +93,7 @@ class SortingAlgorithmsViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
+            destinationVC.topic = topic
             
         }
         else if segue.identifier == "SortingAlgorithmsToMultipleChoice" {
@@ -99,11 +104,11 @@ class SortingAlgorithmsViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
+            destinationVC.topic = topic
             
         }
         
     }
-    
     
     @IBAction func startTestButtonPressed(_ sender: Any) {
         
@@ -143,9 +148,7 @@ class SortingAlgorithmsViewController: UIViewController {
             performSegue(withIdentifier: "SortingAlgorithmsToTextResponse", sender: nil)
             
         }
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

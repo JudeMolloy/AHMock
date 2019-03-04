@@ -16,7 +16,10 @@ class RandomTestViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Function that is called when home button is pressed.
     @IBAction func homeButtonPressed(_ sender: Any) {
+        
+        // Changes to home screen
         performSegue(withIdentifier: "OOPToHome", sender: Any?.self)
     }
     
@@ -24,7 +27,6 @@ class RandomTestViewController: UIViewController {
     var OOPArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

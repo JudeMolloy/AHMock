@@ -13,24 +13,29 @@ class MultipleChoiceViewController: UIViewController {
     // Create the variable to store the data passed from previous view controller
     var questionArray = [Any]()
     var nextQuestionIndex: Int?
+    var topic: String?
     
     var question: MultipleChoiceQuestion?
     var score: Int?
     
+    // Function that is called when home button is pressed.
     @IBAction func homeButtonPressed(_ sender: Any) {
+        
+        // Changes to the home screen
         performSegue(withIdentifier: "MultipleChoiceToHome", sender: nil)
+        
     }
     
     // Links to the UI features of on screen elements
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var relatedImage: UIImageView!
     
-    
     @IBOutlet weak var choiceAbutton: RoundedButton!
     @IBOutlet weak var choiceBbutton: RoundedButton!
     @IBOutlet weak var choiceCbutton: RoundedButton!
     @IBOutlet weak var choiceDbutton: RoundedButton!
     
+    // Creates the variable to store the controller for the incorrect message alert.
     var incorrectAlertController: UIAlertController?
 
     override func viewDidLoad() {
@@ -39,7 +44,6 @@ class MultipleChoiceViewController: UIViewController {
         // Call the function to set all of the question data to the UI elements
         setScreenData(question: question)
         
-        // Do any additional setup after loading the view.
     }
     
     func setScreenData(question: MultipleChoiceQuestion?) {
@@ -50,6 +54,7 @@ class MultipleChoiceViewController: UIViewController {
         choiceCbutton.setTitle(question?.choiceC, for: .normal)
         choiceDbutton.setTitle(question?.choiceD, for: .normal)
         
+        // If the question has a related image then this will set the screen to display the image.
         if question?.relatedImage != nil {
             relatedImage.image = question?.relatedImage
         }
@@ -106,17 +111,18 @@ class MultipleChoiceViewController: UIViewController {
         
         }
         else {
+            // Displays the incorrect alert.
             self.present(incorrectAlertController as! UIViewController, animated: true, completion: nil)
             
         }
     }
     
     func nextQuestion() {
-        // Checks to see the type of the next question and then segues to the appropriate view controller.
+        // Checks if there is a next question and if there is, it fetches the next question.
         if questionArray.count > nextQuestionIndex! {
             var nextQuestion = questionArray[nextQuestionIndex!]
             
-            
+            // Checks to see the type of the next question and then segues to the appropriate view controller or just changes the data on the current screen.
             if nextQuestion is MultipleChoiceQuestion {
                 
                 question = questionArray[nextQuestionIndex!] as! MultipleChoiceQuestion
@@ -129,7 +135,7 @@ class MultipleChoiceViewController: UIViewController {
                 performSegue(withIdentifier: "MultipleChoiceToTextResponse", sender: nil)
                 
             }
-            
+            // Increments the index value by 1
             nextQuestionIndex = nextQuestionIndex! + 1
         } else {
             
@@ -170,7 +176,86 @@ class MultipleChoiceViewController: UIViewController {
             self.present(FinalScoreAlertController!, animated: true, completion: nil)
             
         }
+    }
+    
+    func updateHighScore(score: Int) {
         
+        // Sets the constant to hold the file manager.
+        let fileManager = FileManager.default
+        
+        // Creates a variable to store the high score data.
+        var data: [Dictionary<String, Int>] = Array()
+        
+        // Trys to access the file and watches for errors
+        do {
+            // Sets the required variables.
+            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+            let fileURL = path.appendingPathComponent("score.csv")
+            let file = try String(contentsOf: fileURL)
+            let rows = file.components(separatedBy: .newlines)
+            
+            // Parses the data into usable format and is added to an array.
+            for row in rows {
+                let fields = row.replacingOccurrences(of: "\"", with: "").components(separatedBy: ",")
+                data.append([fields[0]: Int(fields[1])!])
+            }
+        } catch {
+            // Outputs the error message to the console.
+            print(error)
+        }
+        
+        // Checks to see which topic the score should possibly be updated for.
+        // It will then check to see if it is a new high score and if so it will change the score in the dictionary and call the update CSV file function.
+        if topic == "Recursion" {
+            
+            if score > data[0]["Recursion"]! {
+                data[0]["Recursion"] = score
+                updateCSVData(scoreArray: data)
+            }
+            
+        } else if topic == "OOP" {
+            
+            if score > data[1]["OOP"]! {
+                data[1]["OOP"] = score
+                updateCSVData(scoreArray: data)
+            }
+            
+        } else if topic == "Sorting Algorithms" {
+            
+            if score > data[2]["Sorting Algorithms"]! {
+                data[2]["Sorting Algorithms"] = score
+                updateCSVData(scoreArray: data)
+                
+            }
+        }
+    }
+    
+    func updateCSVData(scoreArray: [Dictionary<String, Int>]) {
+        
+        // Sets the constant to hold the file manager.
+        let fileManager = FileManager.default
+        
+        // Creates the variable to sotre the data to be inserted into the CSV file.
+        var csvString = ""
+        
+        // Adds the data for each of the topic to the CSV input string.
+        csvString = csvString.appending("Recursion,\(String(describing: scoreArray[0]["Recursion"]!))\n")
+        
+        csvString = csvString.appending("OOP,\(String(describing: scoreArray[1]["OOP"]!))\n")
+        
+        csvString = csvString.appending("Sorting Algorithms,\(String(describing: scoreArray[2]["Sorting Algorithms"]!))")
+        
+        // Attempts to access and write to the CSV file whilst waiting to catch errors.
+        do {
+            // Sets the relevant variables to access the file.
+            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+            let fileURL = path.appendingPathComponent("score.csv")
+            
+            // Trys to write to the CSV file with the input data.
+            try csvString.write(to: fileURL, atomically: true, encoding: .utf8)        } catch {
+                // Ouputs error to console.
+                print(("Error creating the file."))
+        }
     }
     
     
@@ -190,10 +275,10 @@ class MultipleChoiceViewController: UIViewController {
                 destinationVC.questionArray = questionArray
                 destinationVC.nextQuestionIndex = nextQuestionIndex! + 1
                 destinationVC.score = score
+                destinationVC.topic = topic
                 
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -201,15 +286,4 @@ class MultipleChoiceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

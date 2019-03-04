@@ -24,6 +24,7 @@ class OOPViewController: UIViewController {
     var OOPArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
+    let topic = "OOP"
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,6 +41,7 @@ class OOPViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
+            destinationVC.topic = topic
             
         }
         else if segue.identifier == "OOPToMultipleChoice" {
@@ -50,6 +52,7 @@ class OOPViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
+            destinationVC.topic = topic
             
         }
         
@@ -94,13 +97,11 @@ class OOPViewController: UIViewController {
             performSegue(withIdentifier: "OOPToTextResponse", sender: nil)
             
         }
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }

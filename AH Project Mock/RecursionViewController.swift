@@ -22,10 +22,11 @@ class RecursionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // Initialises the variables required
+    // Initialises the variables and constants required
     var recursionArray = [Any]()
     var questionArray = [Any]()
     var question: Any?
+    let topic = "Recursion"
     var inputArray = [2, 3, 5, 8, 9, 12, 15, 18, 22, 25, 28]
     var functionCalls = 0
     var foundBinarySearch = "The value was not found in the list."
@@ -44,7 +45,11 @@ class RecursionViewController: UIViewController {
     @IBOutlet weak var binarySearchInput: UITextField!
     
     @IBAction func inputBinarySearch(_ sender: Any) {
+        
+        // Initiates variable that is used to store how many times the Binary Search function is called.
         functionCalls = 0
+        
+        // This is some input validation to check the input is not empty.
         if (binarySearchInput.text?.isEmpty)! {
             
             // Display the alert that has just been created
@@ -73,7 +78,6 @@ class RecursionViewController: UIViewController {
         // Check to see that the number that was inputted was in the valid range. Anything more than 25 is excessive on the phone memory.
         else if Int((fibonacciInput.text)!)! < 1 || Int((fibonacciInput.text)!)! > 25 {
             
-            
             // Create alert to display validation message
             let alertController = UIAlertController(title: "Error", message:
                 "Please enter a number between 1 and 25.", preferredStyle: UIAlertControllerStyle.alert)
@@ -82,7 +86,6 @@ class RecursionViewController: UIViewController {
             
             // Display the alert that has just been created
             self.present(alertController, animated: true, completion: nil)
-            
             
         }
         else {
@@ -94,9 +97,6 @@ class RecursionViewController: UIViewController {
                 answerLabel.text = "Answer: " + String(result)
             }
         }
-        
-        
-        
     }
     
     // Simple recursive fibonacci function
@@ -131,9 +131,7 @@ class RecursionViewController: UIViewController {
             // Searches the upper half of the array if the search value is greater than the mid value.
             return recursiveBinarySearch(array: array, searchValue: searchValue, min: mid + 1, max: max)
         }
-        
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -149,6 +147,7 @@ class RecursionViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
+            destinationVC.topic = topic
 
         }
         else if segue.identifier == "RecursionToMultipleChoice" {
@@ -159,11 +158,10 @@ class RecursionViewController: UIViewController {
             destinationVC.questionArray = questionArray
             destinationVC.nextQuestionIndex = 1
             destinationVC.score = score
+            destinationVC.topic = topic
             
         }
-        
     }
-    
     
     @IBAction func startTestButtonPressed(_ sender: Any) {
         
@@ -203,9 +201,7 @@ class RecursionViewController: UIViewController {
             performSegue(withIdentifier: "RecursionToTextResponse", sender: nil)
             
         }
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
