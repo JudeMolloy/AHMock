@@ -26,6 +26,7 @@ class OOPViewController: UIViewController {
     var question: Any?
     let topic = "OOP"
     
+    @IBOutlet weak var OOPInput: UITextField!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -55,6 +56,27 @@ class OOPViewController: UIViewController {
             destinationVC.topic = topic
             
         }
+        
+    }
+    
+    
+    @IBAction func OOPInputEntered(_ sender: Any) {
+        
+        // Check to see if the input has been left empty, if so displays the error message.
+        // If it is not blank then it will check which class has been entered in and will output the corresponding data.
+        if (OOPInput.text?.isEmpty)! {
+            let alertController = UIAlertController(title: "Error", message:
+                "The text input cannot be left blank.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
+            
+            // Displays the alert
+            self.present(alertController, animated: true, completion: nil)
+        } else if OOPInput.text?.lowercased() == "monster" {
+            print("it worked")
+        }
+        
+        
         
     }
     

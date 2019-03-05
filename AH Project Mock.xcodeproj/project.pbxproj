@@ -20,6 +20,7 @@
 		CE9992572190D9D60018B647 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9992552190D9D60018B647 /* LaunchScreen.storyboard */; };
 		CE9992602190E75A0018B647 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99925F2190E75A0018B647 /* RoundedButton.swift */; };
 		CEA921EF22248AB80067EC90 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA921EE22248AB80067EC90 /* HighScoreViewController.swift */; };
+		CEABE353222F1418002FD235 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABE352222F1418002FD235 /* UITextField+Extensions.swift */; };
 		CEE3517E21FFAB520081BE1D /* SortingAlgorithmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3517D21FFAB520081BE1D /* SortingAlgorithmsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		CE9992582190D9D60018B647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE99925F2190E75A0018B647 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		CEA921EE22248AB80067EC90 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+		CEABE352222F1418002FD235 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CEE3517D21FFAB520081BE1D /* SortingAlgorithmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingAlgorithmsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				CE8AA31E21B13D3E00E29D3F /* TextResponseViewController.swift */,
 				CE3587AD220A2D6C0035E2F9 /* RandomTestViewController.swift */,
 				CE0959D021BABD2D00A76671 /* RecursionViewController.swift */,
+				CEABE352222F1418002FD235 /* UITextField+Extensions.swift */,
 				CE8AA31C21B1372700E29D3F /* MutltipleChoiceViewController.swift */,
 				CE9992502190D9D60018B647 /* Main.storyboard */,
 				CEA921EE22248AB80067EC90 /* HighScoreViewController.swift */,
@@ -180,6 +183,7 @@
 				CE9992602190E75A0018B647 /* RoundedButton.swift in Sources */,
 				CE3587AC220A1A6C0035E2F9 /* OOPViewController.swift in Sources */,
 				CE99924D2190D9D60018B647 /* AppDelegate.swift in Sources */,
+				CEABE353222F1418002FD235 /* UITextField+Extensions.swift in Sources */,
 				CEE3517E21FFAB520081BE1D /* SortingAlgorithmsViewController.swift in Sources */,
 				CEA921EF22248AB80067EC90 /* HighScoreViewController.swift in Sources */,
 			);
