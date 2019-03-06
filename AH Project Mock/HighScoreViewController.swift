@@ -37,8 +37,9 @@ class HighScoreViewController: UIViewController {
         
         var output: [Dictionary<String, Int>] = Array()
         do {
-            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: true)
             let fileURL = path.appendingPathComponent("score.csv")
+            print(fileURL)
             let file = try String(contentsOf: fileURL)
             let rows = file.components(separatedBy: .newlines)
             for row in rows {

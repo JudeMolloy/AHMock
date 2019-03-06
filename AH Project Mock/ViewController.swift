@@ -243,7 +243,7 @@ class ViewController: UIViewController {
         OOPArray.append(temp1)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a super-class of petrol or electric?", correctAnswer: "truck", answerExplanation: "The truck class is not a super-class, whereas car and vehicle are. ", relatedImage: UIImage(named: "ooptree"))
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a super-class of petrol or electric?", correctAnswer: "truck", answerExplanation: "The truck class is not a super-class, whereas car and vehicle are. ", relatedImage: UIImage(named: "OOPtree"))
         
         // Appends the new TR question to the OOP question array
         OOPArray.append(temp2)

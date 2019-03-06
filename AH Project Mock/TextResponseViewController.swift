@@ -127,7 +127,7 @@ class TextResponseViewController: UIViewController {
             nextQuestionIndex = nextQuestionIndex! + 1
         } else {
             
-            // Calls the function to update the high score in the CSV file.
+            // Calls the function to update the high score in the CSV file if tehre is a new one.
             updateHighScore(score: score!)
             
             // Creates the final message to be displayed in the output alert
@@ -193,6 +193,9 @@ class TextResponseViewController: UIViewController {
             // Outputs the error message to the console.
             print(error)
         }
+        
+        print(data)
+        print(data[1]["OOP"])
         
         // Checks to see which topic the score should possibly be updated for.
         // It will then check to see if it is a new high score and if so it will change the score in the dictionary and call the update CSV file function.

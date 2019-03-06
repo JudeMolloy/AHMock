@@ -349,7 +349,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mR2-Zg-I4c">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mR2-Zg-I4c">
                                                 <rect key="frame" x="15" y="953" width="344" height="638"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -968,7 +968,7 @@
                                                     <action selector="homeButtonPressed:" destination="HoS-9y-PEt" eventType="touchUpInside" id="PUL-I3-hDu"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97r-37-Mht">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97r-37-Mht">
                                                 <rect key="frame" x="8" y="346" width="359" height="616"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -982,7 +982,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IX9-Cc-Qmt">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IX9-Cc-Qmt">
                                                 <rect key="frame" x="8" y="1217" width="359" height="521"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -1035,7 +1035,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82t-rd-0e1">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82t-rd-0e1">
                                                 <rect key="frame" x="8" y="1943" width="359" height="384"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -1049,7 +1049,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-h0-Tpj">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-h0-Tpj">
                                                 <rect key="frame" x="8" y="2335" width="359" height="196"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -1070,7 +1070,7 @@
                                                     <constraint firstAttribute="height" constant="71" id="mtV-kI-rhy"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-Ka-KwV">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-Ka-KwV">
                                                 <rect key="frame" x="8" y="2618" width="359" height="520"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -1293,7 +1293,7 @@
                                                     <constraint firstAttribute="width" constant="344" id="7mS-oi-u9F"/>
                                                     <constraint firstAttribute="height" constant="586" id="mvc-Cu-cge"/>
                                                 </constraints>
-                                                <mutableString key="text">Instantiation is when an object is created from a class - it is sometimes called an instance. One of the main features of object-oriented programming (OOP) is inheritance. Inheritance is the ability to have classes have the methods and properities of their super-classes, they have inherited them. This mean that code does not need to be repeated. A sub-class will have derived/inherited properties and methods from its super-class, however, it can have methods and properties unique to it. One final principle of objecrt-oriented programming is polymorphism. Polymorphism is the ability to present the same interface for differing underlying forms. As an example, in a lot of programming languages, integers and floats are implicitly polymorphic as you have teh ability to add, subtract, multiply etc even though the types are different. Try the interiactive content below to see learn more about sub-classes and super-classes.</mutableString>
+                                                <string key="text">Instantiation is when an object is created from a class - it is sometimes called an instance. One of the main features of object-oriented programming (OOP) is inheritance. Inheritance is the ability to have classes have the methods and properities of their super-classes, they have inherited them. This mean that code does not need to be repeated. A sub-class will have derived/inherited properties and methods from its super-class, however, it can have methods and properties unique to it. One final principle of objecrt-oriented programming is polymorphism. Polymorphism is the ability to present the same interface for differing underlying forms. As an example, in a lot of programming languages, integers and floats are implicitly polymorphic as you have teh ability to add, subtract, multiply etc even though the types are different. Try the interiactive content below to see learn more about sub-classes and super-classes.</string>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1317,9 +1317,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E.g. Monster" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZSc-oj-2qi">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E.g. Monster" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZSc-oj-2qi">
                                                 <rect key="frame" x="23" y="2603" width="328" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="328" id="HJQ-cC-WCC"/>
+                                                    <constraint firstAttribute="height" constant="30" id="LQ4-w6-dUm"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1327,28 +1330,67 @@
                                                     <action selector="OOPInputEntered:" destination="mMW-Tr-dzK" eventType="primaryActionTriggered" id="XEN-Ai-2lk"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub-classes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9I-S4-sFF">
+                                                <rect key="frame" x="23" y="2714" width="328" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="lOP-Ke-267"/>
+                                                    <constraint firstAttribute="width" constant="328" id="oK6-9h-bMG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" text="Read more about Object-Oriented Programming here: https://bit.ly/20Rx76M" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WrL-Ir-T5s">
+                                                <rect key="frame" x="8" y="2768" width="359" height="61"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="ExQ-no-Abi"/>
+                                                    <constraint firstAttribute="height" constant="61" id="O7n-gn-ejT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super-classes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMY-yN-iGy">
+                                                <rect key="frame" x="23" y="2663" width="328" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="0vN-dA-xEY"/>
+                                                    <constraint firstAttribute="width" constant="328" id="wgv-5c-ZQG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="drI-z0-NWj" secondAttribute="trailing" constant="16" id="24c-mV-ry5"/>
+                                            <constraint firstItem="mMY-yN-iGy" firstAttribute="top" secondItem="ZSc-oj-2qi" secondAttribute="bottom" constant="30" id="2S8-oC-Xp1"/>
+                                            <constraint firstItem="mMY-yN-iGy" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="23" id="3iD-9g-S3Y"/>
                                             <constraint firstItem="iAD-bf-vUZ" firstAttribute="top" secondItem="p2b-LJ-PfC" secondAttribute="bottom" constant="8" id="4nU-Tp-pBa"/>
                                             <constraint firstItem="e69-XU-E48" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="5l7-k3-wYU"/>
                                             <constraint firstItem="iAD-bf-vUZ" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="66C-hs-4WY"/>
                                             <constraint firstItem="E21-Cb-xS7" firstAttribute="top" secondItem="hhp-pz-QRy" secondAttribute="top" constant="16" id="6nk-om-O46"/>
                                             <constraint firstItem="jNP-n9-GEY" firstAttribute="top" secondItem="hhp-pz-QRy" secondAttribute="top" id="6pw-jr-5Hc"/>
+                                            <constraint firstItem="z9I-S4-sFF" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="23" id="7Ea-k8-VpQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="WrL-Ir-T5s" secondAttribute="trailing" constant="8" id="7HR-WH-0Gw"/>
                                             <constraint firstItem="gUN-Pg-WHe" firstAttribute="top" secondItem="drI-z0-NWj" secondAttribute="bottom" constant="8" id="BuO-lL-6vy"/>
                                             <constraint firstAttribute="trailing" secondItem="aCd-DL-xnm" secondAttribute="trailing" constant="8" id="Bwm-1x-I2H"/>
                                             <constraint firstItem="gUN-Pg-WHe" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="23" id="E9S-1a-s43"/>
                                             <constraint firstItem="p2b-LJ-PfC" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="FCa-wY-eTy"/>
+                                            <constraint firstAttribute="trailing" secondItem="mMY-yN-iGy" secondAttribute="trailing" constant="24" id="Ila-mY-tZh"/>
                                             <constraint firstAttribute="bottom" secondItem="XKo-wM-Iie" secondAttribute="bottom" constant="15" id="IzH-CW-JD2"/>
                                             <constraint firstAttribute="trailing" secondItem="igc-Ix-OdM" secondAttribute="trailing" constant="16" id="KS2-0K-kGv"/>
                                             <constraint firstItem="igc-Ix-OdM" firstAttribute="top" secondItem="f7j-1O-NPm" secondAttribute="bottom" constant="8" id="KrH-pM-W2V"/>
                                             <constraint firstAttribute="trailing" secondItem="jNP-n9-GEY" secondAttribute="trailing" id="Ogl-AH-MmT"/>
                                             <constraint firstItem="drI-z0-NWj" firstAttribute="top" secondItem="5ET-d0-B2a" secondAttribute="bottom" constant="8" id="PfX-Mn-1kZ"/>
+                                            <constraint firstItem="ZSc-oj-2qi" firstAttribute="top" secondItem="gUN-Pg-WHe" secondAttribute="bottom" constant="8" id="RCj-D4-c2r"/>
+                                            <constraint firstItem="ZSc-oj-2qi" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="23" id="RfM-7D-EqT"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZSc-oj-2qi" secondAttribute="trailing" constant="24" id="S5G-bz-vVB"/>
                                             <constraint firstAttribute="trailing" secondItem="E21-Cb-xS7" secondAttribute="trailing" constant="141" id="WeP-J4-0y7"/>
                                             <constraint firstItem="5ET-d0-B2a" firstAttribute="top" secondItem="iAD-bf-vUZ" secondAttribute="bottom" constant="8.5" id="X83-GE-jZV"/>
                                             <constraint firstItem="5ET-d0-B2a" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="15" id="YnG-0C-fLE"/>
                                             <constraint firstAttribute="trailing" secondItem="gUN-Pg-WHe" secondAttribute="trailing" constant="24" id="aht-jj-MjI"/>
+                                            <constraint firstAttribute="trailing" secondItem="z9I-S4-sFF" secondAttribute="trailing" constant="24" id="cEk-hO-L5I"/>
                                             <constraint firstAttribute="trailing" secondItem="p2b-LJ-PfC" secondAttribute="trailing" constant="16" id="eMH-eX-aMi"/>
                                             <constraint firstAttribute="trailing" secondItem="iAD-bf-vUZ" secondAttribute="trailing" constant="15" id="fVI-Ml-QVR"/>
                                             <constraint firstItem="jNP-n9-GEY" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" id="gfU-AI-soz"/>
@@ -1364,8 +1406,11 @@
                                             <constraint firstItem="p2b-LJ-PfC" firstAttribute="top" secondItem="igc-Ix-OdM" secondAttribute="bottom" constant="8" id="oFT-j1-DKY"/>
                                             <constraint firstAttribute="trailing" secondItem="f7j-1O-NPm" secondAttribute="trailing" constant="16" id="tD9-SF-tiX"/>
                                             <constraint firstAttribute="trailing" secondItem="e69-XU-E48" secondAttribute="trailing" constant="16" id="tfV-v9-3Qq"/>
+                                            <constraint firstItem="z9I-S4-sFF" firstAttribute="top" secondItem="mMY-yN-iGy" secondAttribute="bottom" constant="30" id="tgi-a1-XFY"/>
                                             <constraint firstItem="e69-XU-E48" firstAttribute="top" secondItem="jNP-n9-GEY" secondAttribute="bottom" constant="8" id="uRr-Rg-Ei0"/>
+                                            <constraint firstItem="XKo-wM-Iie" firstAttribute="top" secondItem="WrL-Ir-T5s" secondAttribute="bottom" constant="8" id="yHy-f0-6vA"/>
                                             <constraint firstItem="E21-Cb-xS7" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="140" id="ye2-aR-k8z"/>
+                                            <constraint firstItem="WrL-Ir-T5s" firstAttribute="leading" secondItem="hhp-pz-QRy" secondAttribute="leading" constant="8" id="zU0-ce-ShM"/>
                                             <constraint firstAttribute="trailing" secondItem="5ET-d0-B2a" secondAttribute="trailing" constant="16" id="zrf-pm-Qyl"/>
                                         </constraints>
                                     </view>
@@ -1392,6 +1437,8 @@
                     <size key="freeformSize" width="375" height="2900"/>
                     <connections>
                         <outlet property="OOPInput" destination="ZSc-oj-2qi" id="oqH-T4-dBZ"/>
+                        <outlet property="subClassLabel" destination="z9I-S4-sFF" id="ig7-Ag-vYy"/>
+                        <outlet property="superClassLabel" destination="mMY-yN-iGy" id="vTx-Cp-geM"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="OOPToHome" id="R5G-fc-cEa"/>
                         <segue destination="Rk9-DA-scQ" kind="show" identifier="OOPToTextResponse" id="JwR-Pc-E9A"/>
                         <segue destination="6Dh-fa-UiX" kind="show" identifier="OOPToMultipleChoice" id="hmD-UR-aoq"/>

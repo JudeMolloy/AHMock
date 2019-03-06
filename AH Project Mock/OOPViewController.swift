@@ -12,8 +12,6 @@ class OOPViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func homeButtonPressed(_ sender: Any) {
@@ -27,6 +25,8 @@ class OOPViewController: UIViewController {
     let topic = "OOP"
     
     @IBOutlet weak var OOPInput: UITextField!
+    @IBOutlet weak var superClassLabel: UILabel!
+    @IBOutlet weak var subClassLabel: UILabel!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -62,9 +62,14 @@ class OOPViewController: UIViewController {
     
     @IBAction func OOPInputEntered(_ sender: Any) {
         
+        // Closes the keyboard when a user enters the input.
+        OOPInput.resignFirstResponder()
+        
         // Check to see if the input has been left empty, if so displays the error message.
         // If it is not blank then it will check which class has been entered in and will output the corresponding data.
         if (OOPInput.text?.isEmpty)! {
+            
+            // Creates error alert
             let alertController = UIAlertController(title: "Error", message:
                 "The text input cannot be left blank.", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -72,12 +77,48 @@ class OOPViewController: UIViewController {
             
             // Displays the alert
             self.present(alertController, animated: true, completion: nil)
+        } else if OOPInput.text?.lowercased() == "character" {
+            
+            // Changes the data that is outputted to the screen.
+            superClassLabel.text = "Super-classes: None"
+            subClassLabel.text = "Sub-classes: All other classes"
+            
         } else if OOPInput.text?.lowercased() == "monster" {
-            print("it worked")
+            
+            // Changes the data that is outputted to the screen.
+            superClassLabel.text = "Super-classes: Character"
+            subClassLabel.text = "Sub-classes: Dragon & Orc"
+            
+        } else if OOPInput.text?.lowercased() == "hero" {
+            
+            // Changes the data that is outputted to the screen.
+            superClassLabel.text = "Super-classes: Character"
+            subClassLabel.text = "Sub-classes: None"
+            
+        } else if OOPInput.text?.lowercased() == "dragon" {
+            
+            // Changes the data that is outputted to the screen.
+            superClassLabel.text = "Super-classes: Monster & Character"
+            subClassLabel.text = "Sub-classes: None"
+            
+        } else if OOPInput.text?.lowercased() == "orc" {
+            
+            // Changes the data that is outputted to the screen.
+            superClassLabel.text = "Super-classes: Monster & Character"
+            subClassLabel.text = "Sub-classes: None"
+            
+        } else {
+            
+            // Creates error alert
+            let alertController = UIAlertController(title: "Error", message:
+                "Please enter the name of one of the classes in the above image.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default,handler: nil))
+            
+            // Displays the alert
+            self.present(alertController, animated: true, completion: nil)
+        
         }
-        
-        
-        
     }
     
     

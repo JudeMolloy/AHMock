@@ -73,6 +73,8 @@ class MultipleChoiceViewController: UIViewController {
     @IBAction func choiceAbuttonPressed(_ sender: Any) {
         // Call the function to check if the correct answer was selected.
         checkCorrect(selected: "A")
+        let restart = [["Recursion": 0], ["OOP": 0], ["Sorting Algorithms": 0]]
+        // updateCSVData(scoreArray: restart)
     }
 
     @IBAction func choiceBbuttonPressed(_ sender: Any) {
@@ -139,6 +141,10 @@ class MultipleChoiceViewController: UIViewController {
             nextQuestionIndex = nextQuestionIndex! + 1
         } else {
             
+            // Calls the function to update the high score in the CSV file if tehre is a new one.
+            updateHighScore(score: score!)
+            
+            
             // Creates the final message to be displayed in the output alert
             let finalMessage = "You answered " + String(score!) + " out of " + String(questionArray.count) + " correctly."
             
@@ -203,6 +209,7 @@ class MultipleChoiceViewController: UIViewController {
             // Outputs the error message to the console.
             print(error)
         }
+        
         
         // Checks to see which topic the score should possibly be updated for.
         // It will then check to see if it is a new high score and if so it will change the score in the dictionary and call the update CSV file function.
