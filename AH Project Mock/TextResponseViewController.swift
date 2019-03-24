@@ -1,8 +1,7 @@
 //
 //  TextResponseViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 30/11/2018.
 //  Copyright © 2018 Jude Molloy. All rights reserved.
 //
 
@@ -45,6 +44,19 @@ class TextResponseViewController: UIViewController {
             
             // Displays the alert
             self.present(alertController, animated: true, completion: nil)
+        } else if (textResponseInput.text?.count)! > 25 {
+            
+            // Create the length check error alert controller.
+            let alertController = UIAlertController(title: "Error", message:
+                "Please enter less than 25 characters.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
+            
+            // Displays the alert
+            self.present(alertController, animated: true, completion: nil)
+            
+            // Clears the input box.
+            textResponseInput.text = ""
         }
         else {
             
@@ -115,6 +127,9 @@ class TextResponseViewController: UIViewController {
                 question = questionArray[nextQuestionIndex!] as! TextResponseQuestion
             
                 setScreenData(question: question)
+                
+                // Clears the input box.
+                textResponseInput.text = ""
             
             }
             else if nextQuestion is MultipleChoiceQuestion {
@@ -193,9 +208,6 @@ class TextResponseViewController: UIViewController {
             // Outputs the error message to the console.
             print(error)
         }
-        
-        print(data)
-        print(data[1]["OOP"])
         
         // Checks to see which topic the score should possibly be updated for.
         // It will then check to see if it is a new high score and if so it will change the score in the dictionary and call the update CSV file function.

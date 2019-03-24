@@ -1,8 +1,7 @@
 //
 //  HighScoreViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 25/02/2019.
 //  Copyright © 2019 Jude Molloy. All rights reserved.
 //
 
@@ -10,6 +9,7 @@ import UIKit
 
 class HighScoreViewController: UIViewController {
     
+    // Creates the variables that are required.
     var scoreArray:[Dictionary<String, Int>] = Array()
     var score = Dictionary<String, Int>()
     
@@ -22,75 +22,59 @@ class HighScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        generateCSV(from: scoreArray)
+        // Calls the function to fetch the CSV data.
+        fetchCSVData()
     
     }
     
-    
+    // Function that is called when home button is pressed.
     @IBAction func homeButtonPressed(_ sender: Any) {
+        
+        // Changes to home screen
         performSegue(withIdentifier: "HSToHome", sender: nil)
+        
     }
     
-    func generateCSV(from array:[Dictionary<String, Int>]) {
+    func fetchCSVData() {
         
+        // Sets the file manager
         let fileManager = FileManager.default
         
+        // Creates variable to store data from CSV file.
         var output: [Dictionary<String, Int>] = Array()
+        
         do {
+            // Sets the path
             let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: true)
             let fileURL = path.appendingPathComponent("score.csv")
-            print(fileURL)
+            
+            // Gets data in string form
             let file = try String(contentsOf: fileURL)
+            
+            // Reads data into an array of dictionaries
             let rows = file.components(separatedBy: .newlines)
             for row in rows {
                 let fields = row.replacingOccurrences(of: "\"", with: "").components(separatedBy: ",")
                 output.append([fields[0]: Int(fields[1])!])
             }
         } catch {
+            // Outputs error message to the console
             print(error)
         }
         
+        // Calls the function to update screen data.
         updateScreenData(data: output)
         
     }
     
     func updateScreenData(data: [Dictionary<String, Int>]) {
+        
+        // Updates the data on the screen.
         recursionScoreLabel.text = String(data[0]["Recursion"]!)
         OOPScoreLabel.text = String(data[1]["OOP"]!)
         sortingAlgorithmsScoreLabel.text = String(data[2]["Sorting Algorithms"]!)
     }
 
 }
-
-
-
-//override func viewDidLoad() {
-//    super.viewDidLoad()
-//
-//    let fileName = "test"
-//    let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//    let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
-//    print("File Path: \(fileURL.path)")
-//
-//    let writeString = "Write this text to the file in swift."
-//    do {
-//        try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
-//    } catch let error as NSError {
-//        print("Failed to write to URL")
-//        print(error)
-//    }
-//
-//    var readString = ""
-//    do {
-//        readString = try String(contentsOf: fileURL)
-//    } catch let error as NSError{
-//        print("Failed to read file.")
-//        print(error)
-//    }
-//
-//    print("Contents of the file.")
-//    print(readString)
-//
-//}
 
 

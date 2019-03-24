@@ -1,8 +1,7 @@
 //
 //  RecursionViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 07/12/2018.
 //  Copyright © 2018 Jude Molloy. All rights reserved.
 //
 

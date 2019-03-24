@@ -1,8 +1,7 @@
 //
 //  MutltipleChoiceViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 30/11/2018.
 //  Copyright © 2018 Jude Molloy. All rights reserved.
 //
 
@@ -73,8 +72,6 @@ class MultipleChoiceViewController: UIViewController {
     @IBAction func choiceAbuttonPressed(_ sender: Any) {
         // Call the function to check if the correct answer was selected.
         checkCorrect(selected: "A")
-        let restart = [["Recursion": 0], ["OOP": 0], ["Sorting Algorithms": 0]]
-        // updateCSVData(scoreArray: restart)
     }
 
     @IBAction func choiceBbuttonPressed(_ sender: Any) {
@@ -290,7 +287,6 @@ class MultipleChoiceViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

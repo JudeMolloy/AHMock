@@ -1,8 +1,7 @@
 //
 //  RandomTestViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 05/02/2019.
 //  Copyright © 2019 Jude Molloy. All rights reserved.
 //
 
@@ -12,8 +11,6 @@ class RandomTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     // Function that is called when home button is pressed.
@@ -57,14 +54,11 @@ class RandomTestViewController: UIViewController {
         
     }
     
-    
+    // Called when the start test button is pressed
     @IBAction func startTestButtonPressed(_ sender: Any) {
         
         // Function to select random questions from the possible questions
         func getMixedRandomQuestions(array: [Any]) -> [Any] {
-            
-            
-            
                         return questionArray
         }
         

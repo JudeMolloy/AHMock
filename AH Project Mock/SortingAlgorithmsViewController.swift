@@ -1,8 +1,7 @@
 //
 //  SortingAlgorithmsViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 28/01/2019.
 //  Copyright © 2019 Jude Molloy. All rights reserved.
 //
 
@@ -14,7 +13,10 @@ class SortingAlgorithmsViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // Function that is called when home button is pressed.
     @IBAction func homeButtonPressed(_ sender: Any) {
+        
+        // Changes to home screen
         performSegue(withIdentifier: "SortingAlgorithmsToHome", sender: Any?.self)
     }
     

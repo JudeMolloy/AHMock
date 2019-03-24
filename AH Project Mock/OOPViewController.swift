@@ -1,8 +1,7 @@
 //
 //  OOPViewController.swift
-//  AH Project Mock
+//  AH Project
 //
-//  Created by Jude Molloy on 05/02/2019.
 //  Copyright © 2019 Jude Molloy. All rights reserved.
 //
 
@@ -14,8 +13,12 @@ class OOPViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // Function that is called when home button is pressed.
     @IBAction func homeButtonPressed(_ sender: Any) {
+        
+        // Changes to home screen
         performSegue(withIdentifier: "OOPToHome", sender: Any?.self)
+        
     }
     
     // Initialises the variables required
@@ -83,7 +86,21 @@ class OOPViewController: UIViewController {
             superClassLabel.text = "Super-classes: None"
             subClassLabel.text = "Sub-classes: All other classes"
             
-        } else if OOPInput.text?.lowercased() == "monster" {
+        } else if (OOPInput.text?.count)! > 25 {
+            
+            // Create the length check error alert controller.
+            let alertController = UIAlertController(title: "Error", message:
+                "Please enter less than 25 characters.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default,handler: nil))
+            
+            // Displays the alert
+            self.present(alertController, animated: true, completion: nil)
+            
+            // Clears the input box.
+            OOPInput.text = ""
+        }
+        else if OOPInput.text?.lowercased() == "monster" {
             
             // Changes the data that is outputted to the screen.
             superClassLabel.text = "Super-classes: Character"
@@ -164,7 +181,6 @@ class OOPViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

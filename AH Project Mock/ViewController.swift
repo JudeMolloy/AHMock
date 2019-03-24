@@ -1,8 +1,7 @@
 //
 //  ViewController.swift
-//  AH Project Mock
+//  AH Project 
 //
-//  Created by Jude Molloy on 05/11/2018.
 //  Copyright © 2018 Jude Molloy. All rights reserved.
 //
 
@@ -10,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // Creating variables needed.
     var questionArray: [Any] = []
     var recursionArray: [Any] = []
     var sortingAlgorithmsArray: [Any] = []
@@ -19,7 +19,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Creating the questions to be added to the question arrays
         
@@ -177,7 +176,7 @@ class ViewController: UIViewController {
         sortingAlgorithmsArray.append(temp1)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "Fill in the blank from the Bubble Sort image below.", correctAnswer: "true", answerExplanation: "If a swap takes place then the swapped variable must be set to true.", relatedImage: UIImage(named: "question"))
+        temp2 = TextResponseQuestion(questionText: "Fill in the blank from the Bubble Sort image below.", correctAnswer: "true", answerExplanation: "If a swap takes place then the swapped variable must be set to true.", relatedImage: UIImage(named: "BubbleSortQN"))
         
         // Appends the new TR question to the sorting algorithm question array
         sortingAlgorithmsArray.append(temp2)
@@ -220,13 +219,13 @@ class ViewController: UIViewController {
         
         
         // Used as temporary file for creating the MC questions to go in the arrays
-        temp1 = MultipleChoiceQuestion(questionText: "A sub-class inherits from a...?", choiceA: "Instance", choiceB: "Super-class", choiceC: "Properties (Attributes)", choiceD: "Child-class", correctChoice: "B", answerExplanation: "Sub-classes inherit properties and methods from their super-classes.", relatedImage: UIImage(named: "OOPtree"))
+        temp1 = MultipleChoiceQuestion(questionText: "A subclass inherits from a...?", choiceA: "Instance", choiceB: "Superclass", choiceC: "Properties (Attributes)", choiceD: "Child-class", correctChoice: "B", answerExplanation: "Sub-classes inherit properties and methods from their super-classes.", relatedImage: UIImage(named: "OOPtree"))
         
         // Appends the new MC question to the OOP question array
         OOPArray.append(temp1)
         
         // Used as temporary file for creating the MC questions to go in the arrays
-        temp1 = MultipleChoiceQuestion(questionText: "Data that is held within the object is a...?", choiceA: "Class", choiceB: "Super-class", choiceC: "Property (Attribute)", choiceD: "Method", correctChoice: "C", answerExplanation: "Properties are the data that is held within the object.", relatedImage: UIImage(named: "oopcar"))
+        temp1 = MultipleChoiceQuestion(questionText: "Data that is held within the object is a...?", choiceA: "Class", choiceB: "Superclass", choiceC: "Property (Attribute)", choiceD: "Method", correctChoice: "C", answerExplanation: "Properties are the data that is held within the object.", relatedImage: UIImage(named: "oopcar"))
         
         // Appends the new MC question to the OOP question array
         OOPArray.append(temp1)
@@ -237,18 +236,81 @@ class ViewController: UIViewController {
         // Appends the new MC question to the OOP question array
         OOPArray.append(temp1)
         
-        temp1 = MultipleChoiceQuestion(questionText: "Which of the following could be a super-class of a Dog class?", choiceA: "Vehicle", choiceB: "Boat", choiceC: "Plant", choiceD: "Animal", correctChoice: "D", answerExplanation: "A dog is an animal, therefore animal is a possible super-class of dog.", relatedImage: UIImage(named: "question"))
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Which of the following could be a superclass of a Dog class?", choiceA: "Vehicle", choiceB: "Boat", choiceC: "Plant", choiceD: "Animal", correctChoice: "D", answerExplanation: "A dog is an animal, therefore animal is a possible superclass of dog.", relatedImage: UIImage(named: "question"))
         
         // Appends the new MC question to the OOP question array
         OOPArray.append(temp1)
         
         // Used as temporary file for creating the TR questions to go in the arrays
-        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a super-class of petrol or electric?", correctAnswer: "truck", answerExplanation: "The truck class is not a super-class, whereas car and vehicle are. ", relatedImage: UIImage(named: "OOPtree"))
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a superclass of Petrol or Electric?", correctAnswer: "truck", answerExplanation: "The Truck class is not a superclass, whereas car and vehicle are", relatedImage: UIImage(named: "OOPtree"))
         
         // Appends the new TR question to the OOP question array
         OOPArray.append(temp2)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a subclass?", correctAnswer: "vehicle", answerExplanation: "Vehicle is not a subclass in this case.", relatedImage: UIImage(named: "OOPtree"))
+        
+        // Appends the new TR question to the OOP question array
+        OOPArray.append(temp2)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "A class is a...", choiceA: "Blueprint", choiceB: "Number", choiceC: "Instruction Set", choiceD: "Recipe", correctChoice: "A", answerExplanation: "A class is often described as a blueprint for an object.", relatedImage: UIImage(named: "question"))
+        
+        // Appends the new MC question to the OOP question array
+        OOPArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "Encapsulation means that an objects properties can only be accessed using...", choiceA: "Constructor Methods", choiceB: "Code", choiceC: "Getter Methods", choiceD: "Setter Methods", correctChoice: "C", answerExplanation: "Encapsulation means that the properties/attributes cannot be accessed directly, so a getter method must be used.", relatedImage: UIImage(named: "question"))
+        
+        // Appends the new MC question to the OOP question array
+        OOPArray.append(temp1)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is both a subclass and a superclass?", correctAnswer: "car", answerExplanation: "Looking at the diagram, we can see that the Car class is both a subclass and a superclass.", relatedImage: UIImage(named: "OOPtree"))
+        
+        // Appends the new TR question to the OOP question array
+        OOPArray.append(temp2)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is both a subclass and a superclass?", correctAnswer: "monster", answerExplanation: "Looking at the diagram, we can see that the Monster class is both a subclass and a superclass.", relatedImage: UIImage(named: "oopinherit"))
+        
+        // Appends the new TR question to the OOP question array
+        OOPArray.append(temp2)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a subclass?", correctAnswer: "character", answerExplanation: "Character is not a subclass in this case.", relatedImage: UIImage(named: "oopinherit"))
+        
+        // Appends the new TR question to the OOP question array
+        OOPArray.append(temp2)
+        
+        // Used as temporary file for creating the TR questions to go in the arrays
+        temp2 = TextResponseQuestion(questionText: "Which of the classes is not a superclass of Dragon or Orc?", correctAnswer: "hero", answerExplanation: "The Hero class is not a superclass, whereas car and vehicle are", relatedImage: UIImage(named: "OOPtree"))
+        
+        // Appends the new TR question to the OOP question array
+        OOPArray.append(temp2)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "The ability to present the same interface for differing underlying forms is called...", choiceA: "Encapsulation", choiceB: "Polymorphism", choiceC: "Inheritance", choiceD: "Instantiation", correctChoice: "B", answerExplanation: "Polymorphism is the ability to present the same interface for differing underlying forms.", relatedImage: UIImage(named: "question"))
+        
+        // Appends the new MC question to the OOP question array
+        OOPArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "An instance of a class is an...", choiceA: "Oriented", choiceB: "Blueprint", choiceC: "Inheritance", choiceD: "Object", correctChoice: "D", answerExplanation: "An object is an instance of a class.", relatedImage: UIImage(named: "question"))
+        
+        // Appends the new MC question to the OOP question array
+        OOPArray.append(temp1)
+        
+        // Used as temporary file for creating the MC questions to go in the arrays
+        temp1 = MultipleChoiceQuestion(questionText: "A function that overwrites a method from a superclass is called...", choiceA: "Override Function", choiceB: "Overwrite Function", choiceC: "Changer Function", choiceD: "Edit Function", correctChoice: "A", answerExplanation: "An override function can overwrite a method from a superclass.", relatedImage: UIImage(named: "question"))
+        
+        // Appends the new MC question to the OOP question array
+        OOPArray.append(temp1)
+        
+        // 15 Questions Done.
+        
     }
-    
     
     @IBAction func recursionButtonPressed(_ sender: Any) {
         
